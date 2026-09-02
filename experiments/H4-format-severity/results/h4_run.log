@@ -1,0 +1,34 @@
+[C4] BLOSUM sign convention OK: sev(K->R)=-2 < sev(K->W)=3
+assays on disk: 217
+  ... 160/217 files, 833 fits
+  ... 200/217 files, 1071 fits
+
+[C5] assays: 69 multi-mutant considered, 69 kept, 0 dropped for collinearity, 148 too small/singles-only
+
+# H4 -- D = |beta_k| - |beta_sev|   (>0 edit-distance-driven, <0 severity-driven)
+
+| model | median D | 95% CI | assays |
+|---|---|---|---|
+| **pLM** | | | |
+| ESM2_8M | -0.016 | [-0.027, +0.006] | 69 |
+| ESM2_35M | -0.004 | [-0.026, +0.016] | 69 |
+| ESM2_150M | -0.009 | [-0.026, +0.005] | 69 |
+| ESM2_650M | -0.019 | [-0.049, +0.006] | 69 |
+| ESM2_3B | -0.009 | [-0.038, +0.016] | 69 |
+| ESM2_15B | -0.006 | [-0.041, +0.010] | 69 |
+| ESM1b | -0.012 | [-0.052, +0.014] | 69 |
+| ESM1v_ensemble | -0.005 | [-0.031, +0.002] | 69 |
+| Progen2_large | +0.004 | [-0.028, +0.027] | 69 |
+| RITA_l | +0.003 | [-0.020, +0.023] | 69 |
+| ProtGPT2 | +0.030 | [-0.005, +0.039] | 69 |
+| **alignment** | | | |
+| Site_Independent | +0.004 | [-0.014, +0.035] | 69 |
+| EVmutation | +0.006 | [-0.011, +0.042] | 69 |
+| EVE_ensemble | +0.001 | [-0.010, +0.013] | 69 |
+| GEMME | +0.014 | [-0.002, +0.026] | 69 |
+| DeepSequence_ensemble | -0.003 | [-0.016, +0.008] | 69 |
+| MSA_Transformer_ensemble | -0.014 | [-0.033, +0.004] | 69 |
+
+[C2] shuffled-severity null: mean |beta_sev| = 0.0158 (real 0.0984).  PASS
+
+wrote /scratch/author/icbinb/experiments/H4-format-severity/code/../results/h4_severity.csv (1173 rows)

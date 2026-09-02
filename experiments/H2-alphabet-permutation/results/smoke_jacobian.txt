@@ -1,0 +1,21 @@
+==========================================================================
+Smoke test: categorical Jacobian vs ESM-2 supervised contact head
+==========================================================================
+model=esm2_t33_650M_UR50D  device=cuda
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t33_650M_UR50D.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm2_t33_650M_UR50D.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t33_650M_UR50D-contact-regression.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm2_t33_650M_UR50D-contact-regression.pt
+loaded.
+
+ubiquitin      L=76    jacobian  40.3s  (1520 fwd passes)
+               top-L/2 overlap with supervised head = 0.553 (chance 0.018, 30.2x)
+               spearman over all long-range pairs   = 0.575
+               PASS
+
+protein_G_B1   L=56    jacobian  20.6s  (1120 fwd passes)
+               top-L/2 overlap with supervised head = 0.464 (chance 0.028, 16.4x)
+               spearman over all long-range pairs   = 0.436
+               PASS
+
+==========================================================================
+VERDICT: Jacobian implementation validated
+==========================================================================

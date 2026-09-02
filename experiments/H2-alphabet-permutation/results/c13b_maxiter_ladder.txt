@@ -1,0 +1,7 @@
+  ubiquitin      region 0..67 of MSA query, ident=0.96, depth 3000, L=67, pdb cov=100%
+Amendment 13b diagnostic: ubiquitin L=67 depth=3000 lam=0.001 zero init
+  maxiter       max|dS|      rel|dS| top-L/2 ov
+  2           2.220e-16    1.122e-15      1.000   [20s]
+  10          2.043e-14    1.369e-14      1.000   [90s]
+  40          2.445e-09    1.205e-09      1.000   [303s]
+  150         3.808e-03    1.880e-03      1.000   (from the committed C13 run)

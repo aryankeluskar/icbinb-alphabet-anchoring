@@ -1,0 +1,55 @@
+H4 Amendment 1 -- aggregated DV (within-cell Spearman)
+assays on disk: 217   min cell=50   min cells/assay=6
+
+
+assays usable: 63   dropped for <6 cells: 6
+
+## ALL assays  (63 assays)
+| model | median D | 95% CI | n |
+|---|---|---|---|
+| **pLM** | | | |
+| ESM2_8M | +0.076 | [-0.011, +0.219] | 63 |
+| ESM2_35M | +0.199 | [+0.063, +0.372] | 63 |  **CI excludes 0**
+| ESM2_150M | +0.362 | [+0.144, +0.563] | 63 |  **CI excludes 0**
+| ESM2_650M | +0.314 | [+0.213, +0.525] | 63 |  **CI excludes 0**
+| ESM2_3B | +0.408 | [+0.238, +0.577] | 63 |  **CI excludes 0**
+| ESM2_15B | +0.316 | [+0.125, +0.547] | 63 |  **CI excludes 0**
+| ESM1b | +0.230 | [+0.059, +0.374] | 63 |  **CI excludes 0**
+| ESM1v_ensemble | +0.209 | [-0.035, +0.417] | 63 |
+| Progen2_large | +0.266 | [-0.019, +0.351] | 63 |
+| RITA_l | +0.245 | [+0.001, +0.453] | 63 |  **CI excludes 0**
+| ProtGPT2 | +0.308 | [+0.184, +0.470] | 63 |  **CI excludes 0**
+| **alignment** | | | |
+| Site_Independent | +0.113 | [-0.177, +0.288] | 62 |
+| EVmutation | +0.168 | [-0.021, +0.390] | 62 |
+| EVE_ensemble | +0.223 | [+0.012, +0.375] | 63 |  **CI excludes 0**
+| GEMME | +0.344 | [+0.185, +0.510] | 63 |  **CI excludes 0**
+| DeepSequence_ensemble | +0.284 | [+0.169, +0.371] | 63 |  **CI excludes 0**
+| MSA_Transformer_ensemble | +0.192 | [+0.051, +0.515] | 63 |  **CI excludes 0**
+
+pLM median D = +0.2696 (n=693);  alignment = +0.2417 (n=376);  Mann-Whitney z = 1.85
+
+## k-rich assays (k_max>=4)  (11 assays)
+| model | median D | 95% CI | n |
+|---|---|---|---|
+| **pLM** | | | |
+| ESM2_8M | +0.080 | [-0.118, +0.546] | 11 |
+| ESM2_35M | +0.131 | [-0.217, +0.502] | 11 |
+| ESM2_150M | +0.105 | [-0.187, +0.555] | 11 |
+| ESM2_650M | -0.067 | [-0.295, +0.158] | 11 |
+| ESM2_3B | +0.122 | [-0.126, +0.482] | 11 |
+| ESM2_15B | +0.108 | [-0.170, +0.386] | 11 |
+| ESM1b | +0.059 | [-0.275, +0.485] | 11 |
+| ESM1v_ensemble | +0.033 | [-0.346, +0.416] | 11 |
+| Progen2_large | +0.127 | [-0.284, +0.340] | 11 |
+| RITA_l | +0.149 | [-0.188, +0.345] | 11 |
+| ProtGPT2 | +0.117 | [-0.097, +0.480] | 11 |
+| **alignment** | | | |
+| Site_Independent | +0.203 | [-0.198, +0.468] | 11 |
+| EVmutation | +0.213 | [-0.211, +0.428] | 11 |
+| EVE_ensemble | +0.210 | [-0.100, +0.453] | 11 |
+| GEMME | -0.234 | [-0.519, +0.452] | 11 |
+| DeepSequence_ensemble | +0.284 | [+0.169, +0.411] | 11 |  **CI excludes 0**
+| MSA_Transformer_ensemble | +0.051 | [-0.299, +0.625] | 11 |
+
+pLM median D = +0.0797 (n=121);  alignment = +0.1701 (n=66);  Mann-Whitney z = -0.29

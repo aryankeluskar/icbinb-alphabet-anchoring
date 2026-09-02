@@ -1,0 +1,3 @@
+[submodule ".icbinb-data"]
+	path = .icbinb-data
+	url = https://github.com/<anon-author>/icbinb-data.git

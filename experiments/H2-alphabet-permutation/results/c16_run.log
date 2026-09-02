@@ -1,0 +1,194 @@
+C16 native contact head   device=cuda  proteins=9  cells/protein=37
+   PF00013|B3RHY5_TRIAD         L=67
+   PF00018|BOI2_YEAST           L=51
+   PF00027|P73234_SYNY3         L=89
+   PF00072|AGMR_PSEAE           L=114
+   PF00076|LA_HUMAN             L=69
+   cytochrome_c                 L=104
+   lysozyme_T4                  L=164
+   protein_G_B1                 L=56
+   ubiquitin                    L=76
+
+=== esm2_t33_650M_UR50D  device=cuda  proteins=9 ===
+   contact-regression head verified against esm2_t33_650M_UR50D-contact-regression.pt (660 features)
+
+PF00013|B3RHY5_TRIAD  L=67  baseline 2.8s  (chance overlap 0.021)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.889+-0.014
+   random        m=6   overlap=0.323+-0.395
+   random        m=10  overlap=0.253+-0.315
+   random        m=20  overlap=0.010+-0.014
+   In-class  m=2   overlap=0.970+-0.000
+   In-class  m=6   overlap=0.909+-0.025
+   In-class  m=10  overlap=0.929+-0.014
+   In-class  m=20  overlap=0.919+-0.014
+   Cross-class       m=2   overlap=0.667+-0.346
+   Cross-class       m=6   overlap=0.081+-0.094
+   Cross-class       m=10  overlap=0.000+-0.000
+   Cross-class       m=20  overlap=0.000+-0.000
+
+PF00018|BOI2_YEAST  L=51  baseline 0.3s  (chance overlap 0.032)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.920+-0.033
+   random        m=6   overlap=0.547+-0.329
+   random        m=10  overlap=0.067+-0.068
+   random        m=20  overlap=0.080+-0.033
+   In-class  m=2   overlap=0.973+-0.019
+   In-class  m=6   overlap=0.947+-0.019
+   In-class  m=10  overlap=0.640+-0.425
+   In-class  m=20  overlap=0.893+-0.038
+   Cross-class       m=2   overlap=0.880+-0.057
+   Cross-class       m=6   overlap=0.667+-0.180
+   Cross-class       m=10  overlap=0.040+-0.033
+   Cross-class       m=20  overlap=0.013+-0.019
+
+PF00027|P73234_SYNY3  L=89  baseline 0.2s  (chance overlap 0.015)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.606+-0.429
+   random        m=6   overlap=0.318+-0.418
+   random        m=10  overlap=0.333+-0.409
+   random        m=20  overlap=0.008+-0.011
+   In-class  m=2   overlap=0.879+-0.054
+   In-class  m=6   overlap=0.841+-0.032
+   In-class  m=10  overlap=0.848+-0.060
+   In-class  m=20  overlap=0.818+-0.019
+   Cross-class       m=2   overlap=0.492+-0.358
+   Cross-class       m=6   overlap=0.439+-0.300
+   Cross-class       m=10  overlap=0.015+-0.021
+   Cross-class       m=20  overlap=0.000+-0.000
+
+PF00072|AGMR_PSEAE  L=114  baseline 0.1s  (chance overlap 0.011)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.906+-0.008
+   random        m=6   overlap=0.801+-0.066
+   random        m=10  overlap=0.269+-0.230
+   random        m=20  overlap=0.018+-0.025
+   In-class  m=2   overlap=0.947+-0.000
+   In-class  m=6   overlap=0.906+-0.036
+   In-class  m=10  overlap=0.877+-0.029
+   In-class  m=20  overlap=0.848+-0.017
+   Cross-class       m=2   overlap=0.854+-0.098
+   Cross-class       m=6   overlap=0.561+-0.397
+   Cross-class       m=10  overlap=0.029+-0.008
+   Cross-class       m=20  overlap=0.006+-0.008
+
+PF00076|LA_HUMAN  L=69  baseline 0.1s  (chance overlap 0.021)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.882+-0.042
+   random        m=6   overlap=0.451+-0.361
+   random        m=10  overlap=0.020+-0.028
+   random        m=20  overlap=0.000+-0.000
+   In-class  m=2   overlap=0.980+-0.028
+   In-class  m=6   overlap=0.931+-0.014
+   In-class  m=10  overlap=0.912+-0.000
+   In-class  m=20  overlap=0.902+-0.014
+   Cross-class       m=2   overlap=0.569+-0.408
+   Cross-class       m=6   overlap=0.294+-0.374
+   Cross-class       m=10  overlap=0.039+-0.037
+   Cross-class       m=20  overlap=0.010+-0.014
+
+cytochrome_c  L=104  baseline 0.3s  (chance overlap 0.012)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.891+-0.040
+   random        m=6   overlap=0.756+-0.033
+   random        m=10  overlap=0.288+-0.394
+   random        m=20  overlap=0.026+-0.009
+   In-class  m=2   overlap=0.917+-0.018
+   In-class  m=6   overlap=0.885+-0.031
+   In-class  m=10  overlap=0.814+-0.009
+   In-class  m=20  overlap=0.788+-0.016
+   Cross-class       m=2   overlap=0.846+-0.031
+   Cross-class       m=6   overlap=0.500+-0.341
+   Cross-class       m=10  overlap=0.013+-0.009
+   Cross-class       m=20  overlap=0.026+-0.018
+
+lysozyme_T4  L=164  baseline 0.2s  (chance overlap 0.007)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.870+-0.032
+   random        m=6   overlap=0.569+-0.371
+   random        m=10  overlap=0.317+-0.284
+   random        m=20  overlap=0.024+-0.026
+   In-class  m=2   overlap=0.939+-0.000
+   In-class  m=6   overlap=0.907+-0.011
+   In-class  m=10  overlap=0.866+-0.020
+   In-class  m=20  overlap=0.837+-0.015
+   Cross-class       m=2   overlap=0.825+-0.080
+   Cross-class       m=6   overlap=0.390+-0.273
+   Cross-class       m=10  overlap=0.085+-0.086
+   Cross-class       m=20  overlap=0.012+-0.017
+
+protein_G_B1  L=56  baseline 0.1s  (chance overlap 0.028)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.690+-0.211
+   random        m=6   overlap=0.464+-0.087
+   random        m=10  overlap=0.060+-0.017
+   random        m=20  overlap=0.036+-0.000
+   In-class  m=2   overlap=0.869+-0.017
+   In-class  m=6   overlap=0.702+-0.102
+   In-class  m=10  overlap=0.476+-0.147
+   In-class  m=20  overlap=0.310+-0.089
+   Cross-class       m=2   overlap=0.690+-0.131
+   Cross-class       m=6   overlap=0.393+-0.051
+   Cross-class       m=10  overlap=0.119+-0.073
+   Cross-class       m=20  overlap=0.012+-0.017
+
+ubiquitin  L=76  baseline 0.1s  (chance overlap 0.018)
+   identity      m=0   overlap=1.000  (identity gate PASS)
+   random        m=2   overlap=0.921+-0.000
+   random        m=6   overlap=0.754+-0.140
+   random        m=10  overlap=0.456+-0.290
+   random        m=20  overlap=0.053+-0.043
+   In-class  m=2   overlap=0.947+-0.000
+   In-class  m=6   overlap=0.912+-0.012
+   In-class  m=10  overlap=0.842+-0.043
+   In-class  m=20  overlap=0.825+-0.033
+   Cross-class       m=2   overlap=0.947+-0.037
+   Cross-class       m=6   overlap=0.570+-0.390
+   Cross-class       m=10  overlap=0.281+-0.309
+   Cross-class       m=20  overlap=0.000+-0.000
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c16_native_head.csv (333 rows, 95s)
+
+==============================================================================
+C16 ANALYSIS  (Amendment 16; thresholds fixed before measurement)
+==============================================================================
+registered model: esm2_t33_650M_UR50D   proteins=9  cells=333
+
+Mean native-head overlap, esm2_t33_650M_UR50D  (identity = 1.000)
+  regime              m=2      m=6     m=10     m=20
+  random            0.842    0.554    0.229    0.028
+  In-class      0.936    0.882    0.801    0.793
+  Cross-class           0.752    0.433    0.069    0.009
+  (mean chance floor 0.0184)
+
+------------------------------------------------------------------------------
+P3 join against experiments/H2-alphabet-permutation/results/h2_esm2_invariance.csv
+  matched 204 cells; dropped 120 of 324
+    108 dropped because the protein is absent from the Jacobian CSV entirely (lysozyme_T4, protein_G_B1, ubiquitin)
+    12 dropped because the protein is present but that (regime, m, seed) cell was never run: PF00013|B3RHY5_TRIAD/Cross-class m=20 s=1, PF00013|B3RHY5_TRIAD/Cross-class m=20 s=2, PF00018|BOI2_YEAST/Cross-class m=20 s=1, PF00018|BOI2_YEAST/Cross-class m=20 s=2, PF00027|P73234_SYNY3/Cross-class m=20 s=1, PF00027|P73234_SYNY3/Cross-class m=20 s=2
+    (9 identity cells excluded by design: both instruments are 1.000 there by construction)
+  rho = +0.8840   (with the identity cells added back: +0.8979)
+
+------------------------------------------------------------------------------
+REGISTERED TESTS (Amendment 16)
+  P1 collapse            overlap(random, m=20) = 0.028  <= 0.15   PASS
+  P2 biochemical grading overlap(cons,m=20) - overlap(rand,m=20) = 0.793 - 0.028 = 0.765  >= 0.20   PASS
+  P3 instrument agreement Spearman rho(native, Jacobian) = 0.884 over 204 cells  >= +0.60   PASS
+
+------------------------------------------------------------------------------
+VERDICT -- the branch Amendment 16 committed the paper to, before the numbers:
+  ALL THREE HOLD. The paper states that the anchoring is a property of the
+  MODEL, not of our readout, and that it reproduces in ESM-2's own published
+  contact predictor. The categorical Jacobian remains the primary instrument
+  because it is unsupervised; the native head becomes the robustness check.
+
+SENSITIVITY, not a second test: Amendment 16 parenthesises |i-j| >= 24 while
+the sweep it calls identical uses 12 (Amendment 3). At min_sep=24 the same two
+registered comparisons read  P1 0.025 <= 0.15 PASS   P2 0.749 >= 0.20 PASS
+The primary DV stays at min_sep=12 because P3 joins against Jacobian overlaps
+measured at that value; a mismatch there would confound the agreement test.
+
+C16 cannot compare the two instruments' ABSOLUTE overlap levels as a measure of
+quality: different predictors, different top-L/2 sets, one supervised and one not.
+Only the within-instrument pattern across cells and the rank correlation between
+instruments are interpreted.

@@ -1,0 +1,82 @@
+C14 model-perceived shift   device=cpu  cells=204  proteins=6
+  PF00013|B3RHY5_TRIAD         L=67   LL(x)=-0.3951  (34 cells)
+    8/204  (33s)
+    16/204  (43s)
+    24/204  (61s)
+    32/204  (76s)
+    34/204  (81s)
+  PF00018|BOI2_YEAST           L=51   LL(x)=-0.2278  (34 cells)
+    42/204  (101s)
+    50/204  (123s)
+    58/204  (151s)
+    66/204  (169s)
+    68/204  (174s)
+  PF00027|P73234_SYNY3         L=89   LL(x)=-0.4190  (34 cells)
+    76/204  (211s)
+    84/204  (235s)
+    92/204  (268s)
+    100/204  (303s)
+    102/204  (309s)
+  PF00072|AGMR_PSEAE           L=114  LL(x)=-0.2431  (34 cells)
+    110/204  (348s)
+    118/204  (384s)
+    126/204  (405s)
+    134/204  (448s)
+    136/204  (455s)
+  PF00076|LA_HUMAN             L=69   LL(x)=-0.2240  (34 cells)
+    144/204  (489s)
+    152/204  (520s)
+    160/204  (540s)
+    168/204  (565s)
+    170/204  (567s)
+  cytochrome_c                 L=104  LL(x)=-0.2116  (34 cells)
+    178/204  (596s)
+    186/204  (627s)
+    194/204  (642s)
+    202/204  (668s)
+    204/204  (673s)
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c14_perceived_shift.csv (204 rows)
+
+==========================================================================
+C14 ANALYSIS  (Amendment 14; thresholds fixed before measurement)
+==========================================================================
+
+mean delta_LL by regime x m  (nats/residue; + = less protein-like to the model)
+  regime              m=2      m=6     m=10     m=20
+  random            0.187    0.288    0.275    0.278
+  In-class      0.027    0.083    0.159    0.226
+  Cross-class           0.211    0.277    0.253    0.273
+
+mean overlap by regime x m
+  random            0.711    0.342    0.079    0.010
+  In-class      0.913    0.863    0.732    0.733
+  Cross-class           0.544    0.226    0.006    0.022
+
+n = 144 cells (random + In-class), ESM-2 650M
+  marginal Spearman(overlap, delta_LL)      = -0.700
+  R^2  overlap ~ delta_LL                   =  0.491
+  R^2  overlap ~ delta_LL + regime          =  0.621
+  delta-R^2 attributable to regime          =  0.131
+  partial Spearman(overlap, regime | dLL)   = +0.506
+
+VERDICT:
+  BRANCH C -- AMBIGUOUS (dR2=0.131, partial=+0.506 fall between the registered
+  thresholds). Report the numbers, claim neither branch.
+
+NEGATIVE CONTROL (holds in every branch): Potts on the SAME relabeled alignment
+  is exactly invariant, max|dS| ~ 1e-14 (Proposition 2). A large delta_LL therefore
+  does NOT mean the coevolutionary computation is impossible on that input -- only
+  that THIS model finds the input unfamiliar. Never write delta_LL as 'the task got
+  harder'.
+
+Within-(regime,m) seed-level Spearman(overlap, delta_LL) -- varies only the seed,
+so it cannot be driven by the regime contrast:
+  random         m=2   n=18  rho=-0.426
+  random         m=6   n=18  rho=+0.297
+  random         m=10  n=18  rho=+0.219
+  random         m=20  n=18  rho=+0.116
+  In-class   m=2   n=18  rho=+0.060
+  In-class   m=6   n=18  rho=-0.118
+  In-class   m=10  n=18  rho=-0.560
+  In-class   m=20  n=18  rho=-0.847

@@ -1,0 +1,408 @@
+PFAM : Multiple alignments and profile HMMs of protein domains
+                        RELEASE 38.2
+            --------------------------------------
+
+1. INTRODUCTION
+
+   Pfam is a collection of protein family alignments which were
+   constructed semi-automatically using hidden Markov models (HMMs).
+   Sequences that are not covered by Pfam are clustered, aligned 
+   automatically and released as Pfam-B. Pfam-B used to be integrated 
+   into the Pfam website, in addition to being available as a flatfile. 
+   It was discontinued from Pfam 28.0 to Pfam 33.0. As of Pfam 33.1, 
+   Pfam-B entries are available as a tar archive of alignments. Pfam 
+   families have permanent accession numbers and contain functional 
+   annotation and cross-references to other databases, while Pfam-B 
+   families are re-generated at each release and are unannotated.
+
+
+2. LOCATION
+
+   Pfam is available on the web at:
+
+   https://www.ebi.ac.uk/interpro/
+
+3. STATISTICS
+
+                            Pfam                            Pfam-B
+                    -----------------------         -----------------------
+  Release   Date  families sequences   residues   families sequences   residues   Source
+  -------  -----  -------- ---------  ----------  -------- --------- -----------  ---------
+  
+    0.2    01/96       100     10431     2246421     11763     32081     9200334  Swiss 32
+    1.0    04/96       175     15610     3560959     11929     31931     8957230  Swiss 33
+    2.0    03/97       527     28170     6770529     13289     31349     8224614  Swiss 34
+    2.1    10/97       527     28205     6790960     13289     31349     8224614  Swiss 34
+    3.0    06/98       806     99043    22766133     33550     79544    20648530  Swiss 35      + SP-TrEMBL 5
+    3.1    09/98      1313    114750    27573470     33550     79544    20648530  Swiss 35      + SP-TrEMBL 5
+    3.2    10/98      1344    115155    27689081     33550     79544    20648530  Swiss 35      + SP-TrEMBL 5
+    3.3    12/98      1390    119420    28085438     33550     79544    20648530  Swiss 35      + SP-TrEMBL 5
+    3.4    01/99      1407    119963    28343136     33550     79544    20648530  Swiss 35      + SP-TrEMBL 5
+    4.0    05/99      1465    147347    34476183    128689    123610    33470292  Swiss 37      + SP-TrEMBL 9
+    4.1    07/99      1488    148195    34692597     36739     89640    22510097  Swiss 37      + SP-TrEMBL 9
+    4.2    08/99      1664    155979    36683193     40017     99587    24062200  Swiss 37      + SP-TrEMBL 9
+    4.3    09/99      1815    161833    37803491     39506     97492    23115975  Swiss 37      + SP-TrEMBL 9
+    4.4    11/99      2000    164412    38411490     39200     96055    22552453  Swiss 37      + SP-TrEMBL 9
+    5.0    01/00      2008    178110    41516321     39228     96077    22506088  Swiss 38      + SP-TrEMBL 11
+    5.1    02/00      2015    179782    41704446     42357    103709    24762358  Swiss 38      + SP-TrEMBL 11
+    5.2    03/00      2128    181068    42018555     42163    102843    24471000  Swiss 38      + SP-TrEMBL 11
+    5.3    05/00      2216    183695    42512479     41974    102024    23952537  Swiss 38      + SP-TrEMBL 11
+    5.4    06/00      2290    185251    42659663     41885    101728    23774015  Swiss 38      + SP-TrEMBL 11
+    5.5    09/00      2478    190302    43837632     41232     99302    22716640  Swiss 38      + SP-TrEMBL 11
+    6.0    01/01      2697    258321    59332756     40681     96571    21789591  Swiss 39      + SP-TrEMBL 14
+    6.1    03/01      2727    260202    59586847     40230     96128    21545422  Swiss 39      + SP-TrEMBL 14
+    6.2    04/01      2773    260570    59749821     58924    131100    30096444  Swiss 39      + SP-TrEMBL 14
+    6.3    05/01      2847    261546    60210817     58539    130194    29602298  Swiss 39      + SP-TrEMBL 14
+    6.4    05/01      2866    262071    60508404     58297    129257    29370968  Swiss 39      + SP-TrEMBL 14
+    6.5    06/01      2929    264276    61192015     57891    127861    28892585  Swiss 39      + SP-TrEMBL 14
+    6.6    08/01      3071    267598    61976627     57477    126378    28143196  Swiss 39      + SP-TrEMBL 14
+    7.0    01/02      3360    409136    93681071     78233    179966    39684197  Swiss 40      + SP-TrEMBL 18
+    7.1    03/02      3621    413112    94740523     77733    178097    38784346  Swiss 40      + SP-TrEMBL 18
+    7.2    04/02      3735    417711    95253221     77408    177141    38445765  Swiss 40      + SP-TrEMBL 18
+    7.3    05/02      3849    419102    95460308     83108    193509    41854966  Swiss 40      + SP-TrEMBL 18
+    7.4    07/02      3882    419360    95369593     83166    193462    41907032  Swiss 40      + SP-TrEMBL 18
+    7.5    08/02      4176    424307    96575650     82343    190360    40849796  Swiss 40      + SP-TrEMBL 18
+    7.6    09/02      4463    428237    97335169     81669    187725    40073352  Swiss 40      + SP-TrEMBL 18
+    7.7    10/02      4832    435353    99654093     80001    182610    38092326  Swiss 40      + SP-TrEMBL 18
+    7.8    11/02      5049    437970   100096164     79427    181013    37469930  Swiss 40      + SP-TrEMBL 18
+    8.0    02/03      5193    626452   142233861     76370    174607    35686841  Swiss 40.31   + SP-TrEMBL 22.0
+    9.0    05/03      5722    705698   160653012     98158    232641    46847522  Swiss 41.0    + SP-TrEMBL 23.0
+   10.0    07/03      6190    733829   167492698     96550    227325    45381141  Swiss 41.10   + SP-TrEMBL 23.15
+   11.0    10/03      7255    805978   184093744     94757    220445    43457201  Swiss 41.25   + SP-TrEMBL 24.14
+   12.0    01/04      7316    898590   205356517    108951    262041    53933483  Swiss 42.5    + SP-TrEMBL 25.6
+   13.0    04/04      7426    899152   205367676    108119    260253    53251778  Swiss 42.12   + SP-TrEMBL 25.12
+   14.0    05/04      7459    903115   206720690    107460    259106    52378429  Swiss 43.2    + SP-TrEMBL 26.2
+   15.0    08/04      7503   1105589   251318620    140216    357340    70848731  Swiss 44.0    + SP-TrEMBL 27.0
+   16.0    10/04      7677   1164599   264667462    139134    353883    69591421  Swiss 44.5    + SP-TrEMBL 27.5
+   17.0    03/05      7868   1321755   297821068    129746    336353    63302856  Swiss 46.0    + SP-TrEMBL 29.0
+   18.0    07/05      7973   1426410   322176782    128469    327279    61569471  Swiss 47.0    + SP-TrEMBL 30.0 
+   19.0    11/05      8183   1728628   391195934    127296    322743    60022455  Swiss 48.1    + SP-TrEMBL 31.1 
+   20.0    04/06      8296   2062824   468403714    126439    319735    59164603  Swiss 48.9    + SP-TrEMBL 31.9
+   21.0    11/06      8957   2343023   532701643    186970    403510    71601041  Swiss 50.0    + SP-TrEMBL 33.0
+   22.0    06/07      9318   2990695   679928271    182493    472700    87434067  Swiss 51.7    + SP-TrEMBL 34.7
+   23.0    07/08     10340   3925943   890618067    223403   1029669   215585168  Swiss 54.5    + SP-TrEMBL 37.5
+   24.0    07/09     11912   7079739  1627712293    142303    940849   171679060  Swiss 57.6    + SP-TrEMBL 40.6
+   25.0    03/11     12273   8729906  2021040130    233651   1317898   257368305  Swiss 2010_05 + SP-TrEMBL 2010_05
+   26.0    11/11     13672  12650879  2981721898    460125   2556444   483163387  Swiss 2011_06 + SP-TrEMBL 2011_06
+   27.0    03/13     14831  18523877  4413005459    544866   3843092   427492613  Swiss 2012_06 + SP-TrEMBL 2012_06
+   28.0	   05/15     16230  65484326 15576887997         -         -           -  Swiss 2014_07 + SP-TrEMBL 2014_07
+   29.0*   12/15     16295   8766213  2152927649         -         -           -  UniprotKB reference proteomes 2015_08 
+   30.0    06/16     16306  12845974  3134907256         -         -           -  UniprotKB reference proteomes 2016_02
+   31.0    03/17     16712  19419549  4710733937         -         -           -  UniprotKB reference proteomes 2016_10
+   32.0    10/18     17929  34008912  8307594774         -         -           -  UniprotKB reference proteomes 2018_04
+   33.0**      -     18197  35363462  8777093607         -         -           -  UniprotKB reference proteomes 2019_08
+   33.1    05/20     18259  35368104  8780671370    136730  13908407  2652697798  UniprotKB reference proteomes 2019_08
+   34.0    03/21     19179  42513961 10615434567    132603  13788646  3054667176  UniprotKB reference proteomes 2020_06
+   35.0    11/21     19632  46063163 11637049158    143337  15674311  3606074484  UniprotKB reference proteomes 2021_03
+   36.0    09/23     20795  57595205 14722378109    163485  20642100  4915385132  UniprotKB reference proteomes 2022_05
+   37.0    05/24     21979  62159004 15910912535    177011  22171229  5223669037  UniprotKB reference proteomes 2023_05
+   37.1    11/24     23794  62457512 16093173138         -         -           -  UniprotKB reference proteomes 2023_05
+   37.2    02/25     24076  62516534 16173091720         -         -           -  UniprotKB reference proteomes 2023_05
+   37.3    04/25     24424  62577481 16223825269         -         -           -  UniprotKB reference proteomes 2023_05
+   37.4    06/25     24736  62646683 16288244678         -         -           -  UniprotKB reference proteomes 2023_05
+   38.0    10/25     25545  69056556 18031854481    258746  32682658  6794021870  UniprotKB reference proteomes 2025_03
+   38.1    01/26     27481  69553799 18195834227         -         -           -  UniprotKB reference proteomes 2025_03
+   38.2    06/26     30134  69985819 18396732257         -         -           -  UniprotKB reference proteomes 2025_03
+
+
+   *As of Pfam 29.0, the sequence database that Pfam is based upon changed to UniProtKB reference proteomes
+   (prior to that is was based on all of UniProtKB). A separate table for UniProtKB statistics is provided 
+   below for releases 29.0 onwards).
+
+   **Pfam 33.0 was never officially released. We had planned to release it in 03/20, however due to the COVID-19
+   pandemic we redirected our efforts to improving our SARS-CoV-2 models. Pfam 33.1 is an updated version of Pfam 33.0, 
+   which contains the improved SARS-CoV-2 models, and additional families that had been built since freezing the data 
+   for Pfam 33.0.
+
+
+                         UniProtKB pfam
+                    -----------------------
+  Release   Date  families sequences   residues  seq coverage res coverage Source
+  -------  -----  -------- ---------  ---------- ------------ ------------ ------
+   29.0    12/15     16295  38464785  9204296875       76.09%      54.81%  Swiss 2015_08 + SP-TrEMBL 2015_08
+   30.0    06/16     16306  46974580 10845378222       76.36%      52.82%  Swiss 2016_02 + SP-TrEMBL 2016_02  
+   31.0    03/17     16712  53741075 12565590000       75.48%      52.65%  Swiss 2016_10 + SP-TrEMBL 2016_10
+   32.0    10/18     17929  88966235 20677234043       77.16%      53.20%  Swiss 2018_04 + SP-TrEBML 2018_04 
+   33.0**      -     18197 132522154 30745440832       77.03%      53.15%  Swiss 2019_08 + SP-TrEBML 2019_08
+   33.1    05/20     18259 132536122 30762789052       77.03%      53.18%  Swiss 2019_08 + SP-TrEBML 2019_08
+   34.0    03/21     19179 159974588 37321226463       76.29%      52.18%  Swiss 2020_06 + SP-TrEMBL 2020_06
+   35.0    11/21     19632 168954667 39737510943       76.90%      52.65%  Swiss 2021_03 + SP-TrEMBL 2021_03
+   36.0    09/23     20795 175052002 40770242962       76.07%      50.35%  Swiss 2022_05 + SP-TrEMBL 2022_05
+   37.0    05/24     21979 193985646 45303308134       77.08%      51.23%  Swiss 2023_05 + SP-TrEMBL 2023_05
+
+   Matches to UniProtKB were discontinued as of Pfam 37.1.
+
+                            NCBI pfam            
+                    -----------------------      
+  Release   Date  families sequences  residues   seq coverage res coverage Source 
+  -------  -----  -------- ---------  ---------- ------------ ------------ ------
+   23.0    07/08     10305   8334719  1674388721       66.39%      50.93%  rel162
+   24.0    08/09     11883  11223814  2279289638       69.51%      53.60%  rel172
+   25.0    03/11     12174  13476897  2814355302       72.24%      56.22%  rel177
+   26.0    11/11     13598  11087249  2723770646       77.40%      55.51%  NR_2011_06
+   27.0    03/13     14831  14475969  3440648294       77.77%      53.96%  NR_2012_06
+   28.0	   05/15     16230  34956107  9175895486       77.98%      57.31%  rel202
+   29.0    12/15     16294  53654747 13959600184       77.60%      56.33%  rel208
+   30.0    06/16     16306  63594819 16841350875       77.96%      56.47%  rel211
+   31.0    03/17     16712  83520060 22139818985       78.16%      56.54%  rel216
+   32.0    10/18     17929 119624967 31966116382       78.44%      57.21%  rel225
+   33.0**      -     18197 132522154 30745440832       78.12%      57.07%  rel234
+   33.1    05/20     18259 177512263 47262254504       78.14%      57.11%  rel234
+
+   Matches to NCBI were discontinued as of Pfam 34.0.
+
+                          Metaseq pfam
+                    -----------------------
+  Release   Date  families sequences   residues seq coverage res coverage  
+  -------  -----  -------- --------- ---------- ------------ ------------
+   23.0    07/08      6438    3055905 448190722       46.21%       33.47%
+   24.0    07/08      7841    4388839 705254062       66.37%       53.66%
+   25.0    03/11      8058    4455426 717611945       67.38%       54.60%
+   26.0    11/11      9114    4672296 761041278       70.65%       57.90%
+   27.0    03/13      9398    4689982 722997105       70.92%       55.01%
+   28.0	   05/15      9754    4655531 784763878	      70.40%       59.71%
+   29.0    12/15      9808    4637966 777879991       70.14%       59.19% 
+   30.0    06/16      9789    4631874 778023334       70.05%       59.20% 
+   31.0    03/17      9847    4627984 777645801       69.99%       59.17%
+   32.0    10/18     10402    4643074 782898953       70.22%       59.57% 
+   33.0**      -     10503    4644167 782685554       70.23%       59.55%
+   33.1    05/20     10513    4646606 783277988       70.27%       59.60%
+
+   Matches to metaseq were discontinued as of Pfam 34.0.
+
+4. CONSTRUCTION OF PFAM
+
+   Pfam is based on a sequence database called Pfamseq - Pfamseq 38 is
+   based on UniProtKB reference proteomes 2025_03.
+   
+   The UniProtKB databases can be accessed at:
+
+   http://www.uniprot.org/downloads
+   or
+   ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase
+
+   Pfamseq 38 contains 90746521 sequences and 36792487934 residues.
+
+   Since Pfam release 27.0, sequences have been excluded from pfamseq based 
+   on the annotations provided by AntiFam.  
+   
+                            
+5. DESCRIPTION OF CHANGES FROM RELEASE 38.1 to 38.2
+
+   Release 38.2 contains a total of 30134 families, with 2674 new
+   families and 21 families killed since the last release. 77.12% of
+   all proteins in Pfamseq contain a match to at least one Pfam
+   domain. 50.00% of all residues in the sequence database fall within
+   Pfam domains.
+
+   Pfam 29.0 was the first release to be based on UniProtKB reference
+   proteomes. Previous Pfam releases were based on the whole of UniProtKB. 
+   Although Pfam has moved to using the reference proteomes, the InterPro 
+   website still provides access to Pfam data for UniProtKB. Matches from
+   the UniProtKB database can be accessed on the InterPro website.
+   The PDB mappings to Pfam are still based on UniProtKB matches to each Pfam family.
+
+   As of release 28.0 we started to move our SEED alignments onto Reference
+   Proteome sequences. In release 38.2, 28562 families have SEEDs consisting
+   soley of Reference Proteome sequences. The rest of the familes contains some
+   SEED sequence(s) that are in UniprotKB 2025_03, but are not in UniProtKB
+   reference proteomes 2025_03. 
+
+6. FUTURE FORMAT CHANGES
+
+   No major changes for the format of the flatfile planned for next
+   release. 
+
+7. DESCRIPTION OF RELEASE FILES
+
+   relnotes.txt               - This file.
+   userman.txt                - A fuller description of Pfam fields.
+   Pfam.version               - A brief description about the release version, number of families, release date and sequence database.
+   Pfam-A.hmm                 - Pfam-A HMMs in an HMM library searchable with the hmmscan program.
+   Pfam-A.hmm.dat             -	Data associated with each HMM required for pfam_scan.pl
+   Pfam-A.seed                - Annotation and seed alignments of all Pfam-A families in Pfam format.
+   Pfam-A.full                - Annotation and full alignments of all Pfam-A families in Pfam format.
+   Pfam-A.fasta               - A list of sequences in each Pfam-A family in fasta format (this file is 90% non-redundant).
+   Pfam-A.dead                - All Pfam-A families that have been removed from the database.
+   Pfam-C                     - A list of all the clans, containing annotation and lists of Pfam-A entries in the clan.
+   trees.tgz                  - Tar archive containing phylogenetic trees created from the SEED alignment of each family.
+   diff                       - A list of files for each family that have changed since the last release.
+   Pfam-A.regions.tsv         - A tab separated file containing UniProtKB reference proteome sequences and Pfam-A family information
+   Pfam-A.clans.tsv           - A tab separated file containing Pfam-A family and clan information for all Pfam-A families
+   pfamA.txt                  - A tab separated file containing Pfam-A family information, in the format of the pfamA table database file
+
+8. DESCRIPTION OF FIELDS
+
+   Compulsory fields:
+   ------------------
+
+   AC   Accession number:           Accession number in form PFxxxxx.version.
+   ID   Identification:             Family identifier.
+   DE   Definition:                 Short description of family.
+   AU   Author:                     Authors of the entry.
+   SE   Source of seed:             The source suggesting the seed members belong to one family.
+   GA   Gathering method:           Search threshold to build the full alignment.
+   TC   Trusted Cutoff:             Lowest sequence score and domain score of match in the full alignment.
+   NC   Noise Cutoff:               Highest sequence score and domain score of match not in full alignment.
+   TP   Type:                       Type of family -- presently Family, Domain, Motif, Repeat, Coiled-coil or Disordered.
+   SQ   Sequence:                   Number of sequences in alignment.
+   //                               End of alignment.
+
+   Optional fields:
+   ----------------
+
+   DC   Database Comment:           Comment about database reference.
+   DR   Database Reference:         Reference to external database.
+   RC   Reference Comment:          Comment about literature reference.
+   RN   Reference Number:           Reference Number.
+   RM   Reference Medline:          Eight digit medline UI number.
+   RT   Reference Title:            Reference Title.
+   RA   Reference Author:           Reference Author
+   RL   Reference Location:         Journal location.
+   PI   Previous identifier:        Record of all previous ID lines.
+   KW   Keywords:                   Keywords.
+   CC   Comment:                    Comments.
+   NE   Pfam accession:             Indicates a nested domain.
+   NL   Location:                   Location of nested domains - sequence ID, start and end of insert.
+   WK   Wikipedia Reference:        Reference to wikipedia.
+
+   Obsolete fields:
+   ----------------
+   AL   Alignment method of seed:   The method used to align the seed members.
+   AM   Alignment Method:           The order ls and fs hits are aligned to the model to build the full align.
+
+9. ACKNOWLEDGEMENTS
+   
+   We are grateful to the many people who contributed data:
+   
+    Lakshminarayan Iyer, L. Aravind, Zhang Dapeng, Robson De Souza, Vivek Anantharaman, Adam Godizk, 
+    Lukasz Jaroszewski, Kyle Ellrott, Gabriel Aldam, Shimelis Assefa, Matthew Bashton, Ewan Birney,
+    Lorenzo Cerrutti, Jody Clements, Lachlan Coin, Richard Durbin, Matthew Fenech, Kristoffer Forslund,
+    O. Luke Gavin, Prasad Gunasekaran, Sam Griffiths-Jones, Kevin Howe, Nicola Kerrison, Mhairi Marshall,
+    Nina Mian, William Mifsud, Simon Moxon, Joanne Pollington, Marco Punta, Stephen-John Sammut,
+    Benjamin Schuster-Bockler, David Studholme, John Tate, Benjamin Vella-Briffa, Corin Yeats,
+    Arthur Wuster, Ruth Eberhardt, Penny Coggill, Sara El-Gebali, Lowri Williams as well as many others.
+
+10. REFERENCES
+
+   Papers on Pfam are listed below:
+
+   i)    Sonnhammer ELL, Eddy SR, Durbin R. Proteins: Structure, 
+         Function and Genetics 28:405-420 (1997).
+
+   ii)   Sonnhammer ELL, Eddy SR, Birney E, Bateman A, Durbin R.
+         Nucleic Acids Research 26:320-322 (1998).
+
+   iii)  Bateman A, Birney E, Durbin R, Eddy SR, Finn RD, Sonnhammer ELL.
+         Nucleic Acids Research 27:260-262 (1999).
+
+   iv)   Bateman A, Birney E, Durbin R, Eddy SR, Howe KL, Sonnhammer ELL.
+         Nucleic Acids Research 28:263-266 (2000).
+
+   v)    Bateman A, Birney E, Cerruti L, Durbin R, Etwiller L, Eddy SR, 
+         Griffiths-Jones S, Howe KL, Marshall M, Sonnhammer ELL.
+         Nucleic Acids Res. 30:276-280 (2002). 
+
+   vi)   Bateman A, Coin L, Durbin R, Finn RD, Hollich V, Griffiths-Jones S,
+         Khanna A, Marshall M, Moxon S, Sonnhammer EL, Studholme DJ, Yeats C,
+         Eddy SR.
+         Nucleic Acids Res. 32(1):D138-41 (2004).
+
+   vii)  Finn RD, Mistry J, Schuster-Bockler B, Griffiths-Jones S, Hollich V, Lassmann T,
+         Moxon S, Marshall M, Khanna A, Durbin R, Eddy SR, Sonnhammer
+         EL, Bateman A.
+         Nucleic Acids Res. 34(Database issue):D247-251 (2006).
+
+   viii) Finn RD, Tate J, Mistry J, Coggill PC, Sammut SJ, Hotz HR, Ceric G, Forslund K, 
+         Eddy SR, Sonnhammer EL, Bateman A.
+         Nucleic Acids Res. 36(Database issue):D281-288 (2008).
+
+     ix) Finn RD, Mistry J, Tate J, Coggill P, Heger A, Pollington JE, Gavin OL, 
+         Gunasekaran P, Ceric G, Forslund K, Holm L, Sonnhammer EL, Eddy SR,
+         Bateman A.
+         Nucleic Acids Res. 38(Database issue):D211-222 (2010).
+
+      x) Punta M, Coggill PC, Eberhardt RY, Mistry J, Tate J, Boursnell C, Pang N, 
+         Forslund K, Ceric G, Clements J, Heger A, Holm L, Sonnhammer EL, Eddy SR, 
+         Bateman A, Finn RD.
+         Nucleic Acids Res. 40(Database issue):D290:301 (2012).
+
+     xi) Finn RD, Bateman A, Clements J, Coggill P, Eberhardt RY, Eddy SR, Heger A,
+     	   Hetherington K, Holm L, Mistry J, Sonnhammer EL, Tate J, Punta M.
+	       Nucleic Acids Res. 42(Database issue):D222-230 (2014).
+
+    xii) Finn RD, Coggill P, Eberhardt RY, Eddy SR, Mistry J, Mitchell AL, Potter SC, 
+         Punta M, Qureshi M, Sangrador-Vegas A, Salazar GA, Tate J, Bateman A.
+         Nucleic Acids Res. 44(Database issue):D279-285 (2016).
+
+   xiii) El-Gebali S, Mistry J, Bateman A, Eddy SR, Luciani A, Potter SC, Qureshi M,
+         Richardson LJ, Salazar GA, Smart A, Sonnhammer ELL, Hirsh L, Paladin L,
+         Piovesan D, Tosatto SCE, Finn RD.
+         Nucleic Acids Res. 47(Database issue):D427-432 (2019).
+
+    xiv) Mistry J, Chuguransky S, Williams L, Qureshi M, Salazar GA, Sonnhammer ELL, 
+         Tosatto SCE, Paladin L, Raj S, Richardson LJ, Finn RD, Bateman A.
+         Nucleic Acids Res. 49(Database issue):D412-419 (2020).
+
+     xv) Paysan-Lafosse T, Andreeva A, Blum M, Chuguransky SR, Grego T, Pinto BL, Salazar GA,
+         Bileschi ML, Llinares-Lopez F, Meng-Papaxanthos L, Colwell LJ, Grishin NV, 
+         Schaeffer RD, Clementel D, Tosatto SCE, Sonnhammer E, Wood V, Bateman A. 
+         Nucleic Acids Res. 53(D1):D523-D534 (2025).
+
+
+   Please reference the most recent paper.
+
+
+11. THE PFAM CONSORTIUM
+
+   Pfam is maintained by a consortium of researchers. You can contact
+   the Pfam consortium at: 
+      
+      pfam-help  "at"  ebi.ac.uk
+
+   The current members of the Pfam consortium are:
+
+   Alex Bateman, Antonina Andreeva, Sara Chuguransky,
+   Nicole Morvelli Flores, Tiago Grego, Beatriz Lazaro Pinto:
+   The European Bioinformatics Institute, UK.
+
+   Erik Sonnhammer: Stockholm Bioinformatics Centre, Sweden
+
+   Sean Eddy: Harvard University, USA
+   
+
+12. COPYRIGHT NOTICE
+
+   Pfam - A database of protein domain family alignments and HMMs
+   Copyright (C) 1996-2026 The Pfam consortium.
+
+   This database is free; you can redistribute it and/or modify it
+   as you wish, under the terms of the CC0 1.0 license, a 
+   'no copyright' license:
+
+   The Pfam consortium has dedicated the work 
+   to the public domain, waiving all rights to the work 
+   worldwide under copyright law, including all related and neighboring 
+   rights, to the extent allowed by law.
+
+   You can copy, modify, distribute and perform the work, even for 
+   commercial purposes, all without asking permission.
+   See Other Information below.
+                                
+
+   Other Information
+
+   o In no way are the patent or trademark rights of any person affected by CC0, 
+     nor are the rights that other persons may have in the work or in how the work 
+     is used, such as publicity or privacy rights.
+   o Unless expressly stated otherwise, the Pfam consortium 
+     makes no warranties about the work, and disclaims liability for all uses of the 
+     work, to the fullest extent permitted by applicable law.
+   o When using or citing the work, you should not imply endorsement by the Pfam consortium.
+
+   You may also obtain a copy of the CC0 license here:
+   http://creativecommons.org/publicdomain/zero/1.0/legalcode 
+
+___________________
+The Pfam Consortium 
+2026

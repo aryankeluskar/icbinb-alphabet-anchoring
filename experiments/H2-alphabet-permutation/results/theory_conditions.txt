@@ -1,0 +1,15 @@
+theory.md condition tests   N=1500 L=40  m=20 random relabeling
+
+(i-a) isotropic ridge lam=0.11619
+      max|dS| = 4.885e-15   (score scale 3.003)   -> INVARIANT
+
+(i-b) anisotropic ridge, per-amino-acid, spread 1.0x-1.5x lam
+      max|dS| = 3.546e-01   (11.81% of score scale)  -> BROKEN, as the proof requires
+      top-L/2 contact-set overlap under the anisotropic ridge: 0.850
+      (isotropic gives 1.000 by Proposition 2)
+
+(ii) non-standard chars: 10% gaps + 1.5% X; unguarded maps gap -> K
+      guarded   max|dS| = 1.776e-15  -> INVARIANT
+      unguarded max|dS| = 1.821e-01  -> BROKEN, as the proof requires
+
+RESULT: all stated conditions are LOAD-BEARING and verified

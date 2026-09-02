@@ -1,0 +1,41 @@
+==========================================================================
+C2 on REAL Pfam alignments -- does exact invariance survive messy data?
+==========================================================================
+
+PF00072 (Response_reg): N=52  L=97  gaps=0.0%  non-standard=none
+    random        m=6   max|dS|=1.08e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    random        m=20  max|dS|=1.32e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=6   max|dS|=9.71e-17  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=20  max|dS|=1.49e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=6   max|dS|=1.49e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=20  max|dS|=1.25e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+
+PF00076 (RRM_1): N=68  L=57  gaps=0.0%  non-standard=none
+    random        m=6   max|dS|=1.25e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    random        m=20  max|dS|=1.39e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=6   max|dS|=1.04e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=20  max|dS|=1.11e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=6   max|dS|=1.11e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=20  max|dS|=1.39e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+
+PF00018 (SH3_1): N=55  L=41  gaps=0.0%  non-standard=none
+    random        m=6   max|dS|=9.71e-17  top-L/2 identical=True  protected=True  comp=True  PASS
+    random        m=20  max|dS|=1.25e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=6   max|dS|=9.71e-17  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=20  max|dS|=1.04e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=6   max|dS|=9.71e-17  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=20  max|dS|=1.11e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+
+PF00013 (KH_1): unusable (N=735, L=12)
+
+PF00027 (cNMP_binding): N=199  L=46  gaps=0.0%  non-standard=none
+    random        m=6   max|dS|=2.50e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    random        m=20  max|dS|=2.22e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=6   max|dS|=1.67e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    In-class  m=20  max|dS|=2.22e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=6   max|dS|=2.22e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+    Cross-class       m=20  max|dS|=2.64e-16  top-L/2 identical=True  protected=True  comp=True  PASS
+
+==========================================================================
+VERDICT: invariance holds on real alignments
+==========================================================================

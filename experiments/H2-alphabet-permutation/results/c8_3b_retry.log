@@ -1,0 +1,105 @@
+C8 3B retry. Existing CSV has 256 rows covering esm2_t12_35M_UR50D, esm2_t30_150M_UR50D, esm2_t33_650M_UR50D, esm2_t6_8M_UR50D
+[19:10:09] 10223 MiB free, need 26000 -- waiting 180s
+[19:13:09] 10223 MiB free, need 26000 -- waiting 180s
+[19:16:09] 9635 MiB free, need 26000 -- waiting 180s
+[19:19:09] 9635 MiB free, need 26000 -- waiting 180s
+[19:22:10] 9801 MiB free, need 26000 -- waiting 180s
+[19:25:10] 10223 MiB free, need 26000 -- waiting 180s
+[19:28:10] 10223 MiB free, need 26000 -- waiting 180s
+[19:31:10] 10223 MiB free, need 26000 -- waiting 180s
+[19:34:10] 10223 MiB free, need 26000 -- waiting 180s
+[19:37:10] 5385 MiB free, need 26000 -- waiting 180s
+[19:40:10] 5385 MiB free, need 26000 -- waiting 180s
+[19:43:11] 5913 MiB free, need 26000 -- waiting 180s
+[19:46:11] 5913 MiB free, need 26000 -- waiting 180s
+[19:49:11] 4881 MiB free, need 26000 -- waiting 180s
+[19:52:11] 5913 MiB free, need 26000 -- waiting 180s
+[19:55:11] 5913 MiB free, need 26000 -- waiting 180s
+[19:58:11] 5079 MiB free, need 26000 -- waiting 180s
+[20:01:11] 5079 MiB free, need 26000 -- waiting 180s
+[20:04:12] 5079 MiB free, need 26000 -- waiting 180s
+[20:07:12] 4329 MiB free, need 26000 -- waiting 180s
+[20:10:12] 3579 MiB free, need 26000 -- waiting 180s
+[20:13:12] 3579 MiB free, need 26000 -- waiting 180s
+[20:16:12] 3579 MiB free, need 26000 -- waiting 180s
+[20:19:13] 3579 MiB free, need 26000 -- waiting 180s
+[20:22:13] 3579 MiB free, need 26000 -- waiting 180s
+[20:25:13] 3051 MiB free, need 26000 -- waiting 180s
+[20:28:13] 2301 MiB free, need 26000 -- waiting 180s
+[20:31:13] 2829 MiB free, need 26000 -- waiting 180s
+[20:34:13] 2829 MiB free, need 26000 -- waiting 180s
+[20:37:14] 2829 MiB free, need 26000 -- waiting 180s
+[20:40:14] 2829 MiB free, need 26000 -- waiting 180s
+[20:43:14] 2829 MiB free, need 26000 -- waiting 180s
+[20:46:14] 2829 MiB free, need 26000 -- waiting 180s
+[20:49:15] 2829 MiB free, need 26000 -- waiting 180s
+[20:52:15] 2829 MiB free, need 26000 -- waiting 180s
+[20:55:15] 2829 MiB free, need 26000 -- waiting 180s
+[20:58:15] 2829 MiB free, need 26000 -- waiting 180s
+[21:01:15] 2829 MiB free, need 26000 -- waiting 180s
+[21:04:16] 2829 MiB free, need 26000 -- waiting 180s
+[21:07:16] 2829 MiB free, need 26000 -- waiting 180s
+[21:10:16] 2829 MiB free, need 26000 -- waiting 180s
+[21:13:16] 2829 MiB free, need 26000 -- waiting 180s
+[21:16:16] 2301 MiB free, need 26000 -- waiting 180s
+[21:19:17] 2301 MiB free, need 26000 -- waiting 180s
+[21:22:17] 2301 MiB free, need 26000 -- waiting 180s
+[21:25:17] 2301 MiB free, need 26000 -- waiting 180s
+[21:28:17] 2301 MiB free, need 26000 -- waiting 180s
+[21:31:18] 2301 MiB free, need 26000 -- waiting 180s
+[21:34:18] 2301 MiB free, need 26000 -- waiting 180s
+[21:37:18] 2301 MiB free, need 26000 -- waiting 180s
+[21:40:18] 2301 MiB free, need 26000 -- waiting 180s
+[21:43:18] 2301 MiB free, need 26000 -- waiting 180s
+[21:46:19] 2301 MiB free, need 26000 -- waiting 180s
+[21:49:19] 2301 MiB free, need 26000 -- waiting 180s
+[21:52:19] 1537 MiB free, need 26000 -- waiting 180s
+[21:55:19] 1537 MiB free, need 26000 -- waiting 180s
+[21:58:19] 5645 MiB free, need 26000 -- waiting 180s
+[22:01:19] 5645 MiB free, need 26000 -- waiting 180s
+[22:04:20] 5645 MiB free, need 26000 -- waiting 180s
+[22:07:20] 5645 MiB free, need 26000 -- waiting 180s
+[22:10:20] 5645 MiB free, need 26000 -- waiting 180s
+[22:13:20] 5645 MiB free, need 26000 -- waiting 180s
+[22:16:21] 16631 MiB free, need 26000 -- waiting 180s
+[22:19:21] 30899 MiB free >= 26000 needed -- starting.
+
+=== esm2_t36_3B_UR50D  (loaded in 76s, batch=4) ===
+  PF00018|BOI2_YEAST L=51 baseline 165.1s (chance 0.032)
+    random        m=2   overlap=0.740+-0.140  spearman=0.665
+    random        m=6   overlap=0.080+-0.040  spearman=0.034
+    random        m=10  overlap=0.140+-0.020  spearman=0.083
+    random        m=20  overlap=0.060+-0.020  spearman=0.061
+    In-class  m=2   overlap=0.880+-0.000  spearman=0.942
+    In-class  m=6   overlap=0.740+-0.020  spearman=0.795
+    In-class  m=10  overlap=0.600+-0.160  spearman=0.346
+    In-class  m=20  overlap=0.660+-0.060  spearman=0.579
+  cytochrome_c L=104 baseline 626.5s (chance 0.012)
+    random        m=2   overlap=0.837+-0.010  spearman=0.894
+    random        m=6   overlap=0.615+-0.038  spearman=0.647
+    random        m=10  overlap=0.327+-0.327  spearman=0.379
+    random        m=20  overlap=0.000+-0.000  spearman=0.037
+    In-class  m=2   overlap=0.942+-0.000  spearman=0.983
+    In-class  m=6   overlap=0.885+-0.000  spearman=0.935
+    In-class  m=10  overlap=0.740+-0.029  spearman=0.801
+    In-class  m=20  overlap=0.712+-0.038  spearman=0.771
+  protein_G_B1 L=56 baseline 112.1s (chance 0.028)
+    random        m=2   overlap=0.554+-0.054  spearman=0.722
+    random        m=6   overlap=0.179+-0.000  spearman=0.360
+    random        m=10  overlap=0.071+-0.000  spearman=0.123
+    random        m=20  overlap=0.054+-0.018  spearman=0.074
+    In-class  m=2   overlap=0.607+-0.000  spearman=0.807
+    In-class  m=6   overlap=0.446+-0.054  spearman=0.599
+    In-class  m=10  overlap=0.196+-0.089  spearman=0.394
+    In-class  m=20  overlap=0.036+-0.036  spearman=0.150
+  ubiquitin L=76 baseline 187.3s (chance 0.018)
+    random        m=2   overlap=0.829+-0.013  spearman=0.889
+    random        m=6   overlap=0.592+-0.039  spearman=0.604
+    random        m=10  overlap=0.316+-0.263  spearman=0.430
+    random        m=20  overlap=0.026+-0.000  spearman=0.164
+    In-class  m=2   overlap=0.842+-0.000  spearman=0.942
+    In-class  m=6   overlap=0.776+-0.013  spearman=0.844
+    In-class  m=10  overlap=0.697+-0.013  spearman=0.795
+    In-class  m=20  overlap=0.697+-0.013  spearman=0.732
+
+appended esm2_t36_3B_UR50D -- CSV now 320 rows

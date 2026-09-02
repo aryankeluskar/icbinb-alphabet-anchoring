@@ -1,0 +1,64 @@
+skip PF00013.sto (N=735 L=12)
+C7 MSA Transformer  device=cuda  families=4
+   PF00018    N=55   L=41
+   PF00027    N=199  L=46
+   PF00072    N=52   L=97
+   PF00076    N=68   L=57
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm_msa1b_t12_100M_UR50S.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm_msa1b_t12_100M_UR50S.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm_msa1b_t12_100M_UR50S-contact-regression.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm_msa1b_t12_100M_UR50S-contact-regression.pt
+loaded MSA-T.
+
+PF00018  N=55 L=41
+   random        m=2   MSA-T=0.850+-0.041   Potts=1.000
+   random        m=6   MSA-T=0.583+-0.047   Potts=1.000
+   random        m=10  MSA-T=0.367+-0.125   Potts=1.000
+   random        m=20  MSA-T=0.317+-0.062   Potts=1.000
+   In-class  m=2   MSA-T=0.900+-0.000   Potts=1.000
+   In-class  m=6   MSA-T=0.817+-0.024   Potts=1.000
+   In-class  m=10  MSA-T=0.700+-0.071   Potts=1.000
+   In-class  m=20  MSA-T=0.617+-0.024   Potts=1.000
+   Cross-class       m=2   MSA-T=0.733+-0.047   Potts=1.000
+   Cross-class       m=6   MSA-T=0.517+-0.047   Potts=1.000
+   Cross-class       m=10  MSA-T=0.433+-0.155   Potts=1.000
+   Cross-class       m=20  MSA-T=0.250+-0.000   Potts=1.000
+PF00027  N=199 L=46
+   random        m=2   MSA-T=0.710+-0.054   Potts=1.000
+   random        m=6   MSA-T=0.551+-0.054   Potts=1.000
+   random        m=10  MSA-T=0.246+-0.054   Potts=1.000
+   random        m=20  MSA-T=0.087+-0.000   Potts=1.000
+   In-class  m=2   MSA-T=0.957+-0.000   Potts=1.000
+   In-class  m=6   MSA-T=0.841+-0.074   Potts=1.000
+   In-class  m=10  MSA-T=0.739+-0.000   Potts=1.000
+   In-class  m=20  MSA-T=0.710+-0.082   Potts=1.000
+   Cross-class       m=2   MSA-T=0.739+-0.106   Potts=1.000
+   Cross-class       m=6   MSA-T=0.304+-0.216   Potts=1.000
+   Cross-class       m=10  MSA-T=0.304+-0.198   Potts=1.000
+   Cross-class       m=20  MSA-T=0.217+-0.000   Potts=1.000
+PF00072  N=52 L=97
+   random        m=2   MSA-T=0.708+-0.135   Potts=1.000
+   random        m=6   MSA-T=0.285+-0.109   Potts=1.000
+   random        m=10  MSA-T=0.076+-0.026   Potts=1.000
+   random        m=20  MSA-T=0.090+-0.010   Potts=1.000
+   In-class  m=2   MSA-T=0.931+-0.010   Potts=1.000
+   In-class  m=6   MSA-T=0.736+-0.071   Potts=1.000
+   In-class  m=10  MSA-T=0.479+-0.145   Potts=1.000
+   In-class  m=20  MSA-T=0.507+-0.049   Potts=1.000
+   Cross-class       m=2   MSA-T=0.597+-0.336   Potts=1.000
+   Cross-class       m=6   MSA-T=0.264+-0.228   Potts=1.000
+   Cross-class       m=10  MSA-T=0.076+-0.020   Potts=1.000
+   Cross-class       m=20  MSA-T=0.062+-0.000   Potts=1.000
+PF00076  N=68 L=57
+   random        m=2   MSA-T=0.833+-0.089   Potts=1.000
+   random        m=6   MSA-T=0.464+-0.105   Potts=1.000
+   random        m=10  MSA-T=0.286+-0.154   Potts=1.000
+   random        m=20  MSA-T=0.095+-0.045   Potts=1.000
+   In-class  m=2   MSA-T=0.952+-0.034   Potts=1.000
+   In-class  m=6   MSA-T=0.786+-0.134   Potts=1.000
+   In-class  m=10  MSA-T=0.643+-0.029   Potts=1.000
+   In-class  m=20  MSA-T=0.310+-0.017   Potts=1.000
+   Cross-class       m=2   MSA-T=0.679+-0.105   Potts=1.000
+   Cross-class       m=6   MSA-T=0.440+-0.067   Potts=1.000
+   Cross-class       m=10  MSA-T=0.143+-0.105   Potts=1.000
+   Cross-class       m=20  MSA-T=0.071+-0.000   Potts=1.000
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c7_msa_transformer.csv (136 rows)

@@ -1,0 +1,166 @@
+C8 scale sweep  device=cuda  models=5  proteins=4
+   PF00018|BOI2_YEAST           L=51
+   cytochrome_c                 L=104
+   protein_G_B1                 L=56
+   ubiquitin                    L=76
+
+=== esm2_t6_8M_UR50D  (loaded in 9s, batch=64) ===
+  PF00018|BOI2_YEAST L=51 baseline 7.2s (chance 0.032)
+    random        m=2   overlap=0.120+-0.040  spearman=0.411
+    random        m=6   overlap=0.160+-0.040  spearman=0.257
+    random        m=10  overlap=0.100+-0.020  spearman=0.121
+    random        m=20  overlap=0.060+-0.020  spearman=0.157
+    In-class  m=2   overlap=0.240+-0.000  spearman=0.489
+    In-class  m=6   overlap=0.140+-0.020  spearman=0.395
+    In-class  m=10  overlap=0.040+-0.040  spearman=0.060
+    In-class  m=20  overlap=0.080+-0.040  spearman=0.127
+  cytochrome_c L=104 baseline 7.0s (chance 0.012)
+    random        m=2   overlap=0.433+-0.087  spearman=0.827
+    random        m=6   overlap=0.048+-0.048  spearman=0.363
+    random        m=10  overlap=0.115+-0.115  spearman=0.513
+    random        m=20  overlap=0.010+-0.010  spearman=0.127
+    In-class  m=2   overlap=0.788+-0.000  spearman=0.958
+    In-class  m=6   overlap=0.625+-0.010  spearman=0.915
+    In-class  m=10  overlap=0.394+-0.106  spearman=0.765
+    In-class  m=20  overlap=0.346+-0.077  spearman=0.748
+  protein_G_B1 L=56 baseline 1.3s (chance 0.028)
+    random        m=2   overlap=0.696+-0.054  spearman=0.873
+    random        m=6   overlap=0.321+-0.036  spearman=0.547
+    random        m=10  overlap=0.107+-0.071  spearman=0.177
+    random        m=20  overlap=0.018+-0.018  spearman=0.147
+    In-class  m=2   overlap=0.786+-0.000  spearman=0.940
+    In-class  m=6   overlap=0.571+-0.179  spearman=0.644
+    In-class  m=10  overlap=0.357+-0.250  spearman=0.512
+    In-class  m=20  overlap=0.143+-0.107  spearman=0.233
+  ubiquitin L=76 baseline 3.2s (chance 0.018)
+    random        m=2   overlap=0.250+-0.118  spearman=0.471
+    random        m=6   overlap=0.158+-0.000  spearman=0.278
+    random        m=10  overlap=0.250+-0.013  spearman=0.295
+    random        m=20  overlap=0.079+-0.079  spearman=0.277
+    In-class  m=2   overlap=0.553+-0.000  spearman=0.816
+    In-class  m=6   overlap=0.395+-0.132  spearman=0.665
+    In-class  m=10  overlap=0.382+-0.066  spearman=0.607
+    In-class  m=20  overlap=0.276+-0.066  spearman=0.402
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t12_35M_UR50D.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm2_t12_35M_UR50D.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t12_35M_UR50D-contact-regression.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm2_t12_35M_UR50D-contact-regression.pt
+
+=== esm2_t12_35M_UR50D  (loaded in 20s, batch=64) ===
+  PF00018|BOI2_YEAST L=51 baseline 5.7s (chance 0.032)
+    random        m=2   overlap=0.100+-0.020  spearman=0.089
+    random        m=6   overlap=0.060+-0.020  spearman=0.120
+    random        m=10  overlap=0.040+-0.040  spearman=0.115
+    random        m=20  overlap=0.080+-0.000  spearman=0.164
+    In-class  m=2   overlap=0.880+-0.000  spearman=0.917
+    In-class  m=6   overlap=0.780+-0.020  spearman=0.789
+    In-class  m=10  overlap=0.060+-0.060  spearman=0.156
+    In-class  m=20  overlap=0.120+-0.120  spearman=0.118
+  cytochrome_c L=104 baseline 11.1s (chance 0.012)
+    random        m=2   overlap=0.692+-0.019  spearman=0.827
+    random        m=6   overlap=0.231+-0.231  spearman=0.370
+    random        m=10  overlap=0.221+-0.221  spearman=0.401
+    random        m=20  overlap=0.000+-0.000  spearman=0.067
+    In-class  m=2   overlap=0.923+-0.000  spearman=0.974
+    In-class  m=6   overlap=0.779+-0.067  spearman=0.928
+    In-class  m=10  overlap=0.615+-0.019  spearman=0.799
+    In-class  m=20  overlap=0.510+-0.029  spearman=0.694
+  protein_G_B1 L=56 baseline 5.5s (chance 0.028)
+    random        m=2   overlap=0.714+-0.000  spearman=0.849
+    random        m=6   overlap=0.089+-0.018  spearman=0.390
+    random        m=10  overlap=0.000+-0.000  spearman=0.056
+    random        m=20  overlap=0.000+-0.000  spearman=0.045
+    In-class  m=2   overlap=0.714+-0.000  spearman=0.887
+    In-class  m=6   overlap=0.446+-0.018  spearman=0.625
+    In-class  m=10  overlap=0.179+-0.143  spearman=0.437
+    In-class  m=20  overlap=0.036+-0.000  spearman=0.170
+  ubiquitin L=76 baseline 7.6s (chance 0.018)
+    random        m=2   overlap=0.645+-0.276  spearman=0.629
+    random        m=6   overlap=0.092+-0.066  spearman=0.204
+    random        m=10  overlap=0.039+-0.013  spearman=0.194
+    random        m=20  overlap=0.026+-0.000  spearman=0.228
+    In-class  m=2   overlap=0.895+-0.000  spearman=0.905
+    In-class  m=6   overlap=0.882+-0.013  spearman=0.823
+    In-class  m=10  overlap=0.842+-0.000  spearman=0.801
+    In-class  m=20  overlap=0.803+-0.013  spearman=0.704
+
+=== esm2_t30_150M_UR50D  (loaded in 58s, batch=64) ===
+  PF00018|BOI2_YEAST L=51 baseline 10.6s (chance 0.032)
+    random        m=2   overlap=0.460+-0.060  spearman=0.444
+    random        m=6   overlap=0.080+-0.040  spearman=0.062
+    random        m=10  overlap=0.260+-0.100  spearman=0.191
+    random        m=20  overlap=0.080+-0.040  spearman=0.102
+    In-class  m=2   overlap=0.960+-0.000  spearman=0.947
+    In-class  m=6   overlap=0.880+-0.040  spearman=0.845
+    In-class  m=10  overlap=0.560+-0.080  spearman=0.398
+    In-class  m=20  overlap=0.760+-0.000  spearman=0.691
+  cytochrome_c L=104 baseline 36.3s (chance 0.012)
+    random        m=2   overlap=0.865+-0.019  spearman=0.914
+    random        m=6   overlap=0.365+-0.269  spearman=0.476
+    random        m=10  overlap=0.212+-0.173  spearman=0.434
+    random        m=20  overlap=0.000+-0.000  spearman=0.080
+    In-class  m=2   overlap=0.942+-0.000  spearman=0.988
+    In-class  m=6   overlap=0.875+-0.048  spearman=0.960
+    In-class  m=10  overlap=0.837+-0.029  spearman=0.891
+    In-class  m=20  overlap=0.798+-0.010  spearman=0.871
+  protein_G_B1 L=56 baseline 14.5s (chance 0.028)
+    random        m=2   overlap=0.643+-0.000  spearman=0.794
+    random        m=6   overlap=0.196+-0.054  spearman=0.446
+    random        m=10  overlap=0.036+-0.000  spearman=0.062
+    random        m=20  overlap=0.018+-0.018  spearman=-0.015
+    In-class  m=2   overlap=0.786+-0.000  spearman=0.911
+    In-class  m=6   overlap=0.518+-0.018  spearman=0.663
+    In-class  m=10  overlap=0.268+-0.125  spearman=0.511
+    In-class  m=20  overlap=0.054+-0.054  spearman=0.194
+  ubiquitin L=76 baseline 23.0s (chance 0.018)
+    random        m=2   overlap=0.882+-0.039  spearman=0.844
+    random        m=6   overlap=0.461+-0.013  spearman=0.492
+    random        m=10  overlap=0.132+-0.053  spearman=0.246
+    random        m=20  overlap=0.013+-0.013  spearman=0.146
+    In-class  m=2   overlap=0.947+-0.000  spearman=0.974
+    In-class  m=6   overlap=0.908+-0.013  spearman=0.928
+    In-class  m=10  overlap=0.895+-0.026  spearman=0.884
+    In-class  m=20  overlap=0.882+-0.013  spearman=0.833
+
+=== esm2_t33_650M_UR50D  (loaded in 63s, batch=32) ===
+  PF00018|BOI2_YEAST L=51 baseline 41.4s (chance 0.032)
+    random        m=2   overlap=0.780+-0.060  spearman=0.717
+    random        m=6   overlap=0.120+-0.040  spearman=0.048
+    random        m=10  overlap=0.040+-0.040  spearman=0.086
+    random        m=20  overlap=0.020+-0.020  spearman=0.053
+    In-class  m=2   overlap=0.880+-0.000  spearman=0.942
+    In-class  m=6   overlap=0.900+-0.020  spearman=0.879
+    In-class  m=10  overlap=0.360+-0.280  spearman=0.309
+    In-class  m=20  overlap=0.560+-0.160  spearman=0.536
+  cytochrome_c L=104 baseline 163.1s (chance 0.012)
+    random        m=2   overlap=0.798+-0.010  spearman=0.903
+    random        m=6   overlap=0.490+-0.183  spearman=0.601
+    random        m=10  overlap=0.327+-0.327  spearman=0.395
+    random        m=20  overlap=0.000+-0.000  spearman=0.061
+    In-class  m=2   overlap=0.923+-0.000  spearman=0.984
+    In-class  m=6   overlap=0.856+-0.029  spearman=0.951
+    In-class  m=10  overlap=0.731+-0.000  spearman=0.858
+    In-class  m=20  overlap=0.712+-0.000  spearman=0.837
+  protein_G_B1 L=56 baseline 54.1s (chance 0.028)
+    random        m=2   overlap=0.554+-0.018  spearman=0.809
+    random        m=6   overlap=0.071+-0.000  spearman=0.409
+    random        m=10  overlap=0.018+-0.018  spearman=0.099
+    random        m=20  overlap=0.036+-0.000  spearman=0.039
+    In-class  m=2   overlap=0.643+-0.000  spearman=0.848
+    In-class  m=6   overlap=0.500+-0.071  spearman=0.748
+    In-class  m=10  overlap=0.232+-0.089  spearman=0.531
+    In-class  m=20  overlap=0.089+-0.018  spearman=0.258
+  ubiquitin L=76 baseline 90.1s (chance 0.018)
+    random        m=2   overlap=0.842+-0.026  spearman=0.859
+    random        m=6   overlap=0.408+-0.197  spearman=0.452
+    random        m=10  overlap=0.276+-0.250  spearman=0.376
+    random        m=20  overlap=0.013+-0.013  spearman=0.205
+    In-class  m=2   overlap=0.868+-0.000  spearman=0.936
+    In-class  m=6   overlap=0.763+-0.026  spearman=0.866
+    In-class  m=10  overlap=0.711+-0.000  spearman=0.808
+    In-class  m=20  overlap=0.645+-0.013  spearman=0.756
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t36_3B_UR50D.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm2_t36_3B_UR50D.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t36_3B_UR50D-contact-regression.pt" to /scratch/author/icbinb/.cache/torch/hub/checkpoints/esm2_t36_3B_UR50D-contact-regression.pt
+
+!! esm2_t36_3B_UR50D FAILED: CUDA out of memory. Tried to allocate 100.00 MiB. GPU 0 has a total capacity of 79.25 GiB of which 49.81 MiB is free. Process 1442298 has 10.06 GiB memory in use. Process 1505501 has 9.96 GiB memory in use. Process 1505498 has 9.99 GiB memory in use. Process 1744856 has 522.00 MiB memory in use. Process 3749461 has 4.67 GiB memory in use. Process 3876816 has 4.01 GiB memory in use. Process 4056675 has 8.57 GiB memory in use. Process 4061747 has 9.75 GiB memory in use. Process 4153071 has 7.19 GiB memory in use. Including non-PyTorch memory, this process has 8.13 GiB memory in use. Process 86050 has 5.25 GiB memory in use. Process 936775 has 1.04 GiB memory in use. Of the allocated memory 7.63 GiB is allocated by PyTorch, and 13.27 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+!! reporting sweep as esm2_t6_8M_UR50D, esm2_t12_35M_UR50D, esm2_t30_150M_UR50D, esm2_t33_650M_UR50D only
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c8_scale.csv (256 rows) covering esm2_t6_8M_UR50D, esm2_t12_35M_UR50D, esm2_t30_150M_UR50D, esm2_t33_650M_UR50D

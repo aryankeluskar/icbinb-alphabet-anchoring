@@ -1,0 +1,15 @@
+target,model,regime,m,seed,precision,n_eval,chance,x_chance,note
+ubiquitin,potts,identity,0,0,0.315789,38,0.045455,6.947,
+ubiquitin,potts,random,20,0,0.315789,38,0.045455,6.947,max|dS|=2.3e-14
+ubiquitin,potts,random,20,1,0.315789,38,0.045455,6.947,max|dS|=1.8e-14
+ubiquitin,esm2,identity-fulllen,0,0,0.763158,38,0.045455,16.789,C9 comparison
+ubiquitin,esm2,identity,0,0,0.736842,38,0.045455,16.211,
+ubiquitin,esm2,random,20,0,0.078947,38,0.045455,1.737,
+ubiquitin,esm2,random,20,1,0.026316,38,0.045455,0.579,
+protein_G_B1,potts,identity,0,0,0.178571,28,0.079798,2.238,
+protein_G_B1,potts,random,20,0,0.178571,28,0.079798,2.238,max|dS|=1.1e-14
+protein_G_B1,potts,random,20,1,0.178571,28,0.079798,2.238,max|dS|=1.3e-14
+protein_G_B1,esm2,identity-fulllen,0,0,0.5,28,0.079798,6.266,C9 comparison
+protein_G_B1,esm2,identity,0,0,0.5,28,0.079798,6.266,
+protein_G_B1,esm2,random,20,0,0.071429,28,0.079798,0.895,
+protein_G_B1,esm2,random,20,1,0.142857,28,0.079798,1.79,

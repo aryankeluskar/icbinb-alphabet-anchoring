@@ -1,0 +1,31 @@
+============================================================================
+Adversarial C2 -- invariance with gaps and non-standard residues injected
+============================================================================
+MSA: N=1500  L=60
+     gaps         15.1%
+     X            0.73%
+     B            0.71%
+     Z            0.69%
+     U            0.69%
+     O            0.69%
+     *            0.71%
+
+[C0'] signal survives the corruption: recall@L/2 = 1.0000
+      PASS
+
+[C2'] invariance with dirty input
+      random        m=6   max|dS|=1.78e-15  top-L/2 identical=True  protected=True  PASS
+      random        m=20  max|dS|=1.78e-15  top-L/2 identical=True  protected=True  PASS
+      In-class  m=6   max|dS|=1.78e-15  top-L/2 identical=True  protected=True  PASS
+      In-class  m=20  max|dS|=1.78e-15  top-L/2 identical=True  protected=True  PASS
+      Cross-class       m=6   max|dS|=1.78e-15  top-L/2 identical=True  protected=True  PASS
+      Cross-class       m=20  max|dS|=1.78e-15  top-L/2 identical=True  protected=True  PASS
+
+[C2''] positive control -- relabel X/B/Z/U/O/* too, bypassing the guard
+      guard blocks it via apply_perm_msa: True
+      unguarded: max|dS| = 1.573e-01  top-L/2 identical=False  chars altered: XBZUO*
+      PASS -- PROTECTED is load-bearing; the clean pass has power
+
+============================================================================
+VERDICT: invariance robust to gaps and non-standard residues
+============================================================================

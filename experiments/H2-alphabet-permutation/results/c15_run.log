@@ -1,0 +1,71 @@
+C15 shift saturation across scale   device=cpu  cells=256  models=4
+
+  loading esm2_t6_8M_UR50D  (64 cells)
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t6_8M_UR50D.pt" to /scratch/author/.cache/torch/hub/checkpoints/esm2_t6_8M_UR50D.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t6_8M_UR50D-contact-regression.pt" to /scratch/author/.cache/torch/hub/checkpoints/esm2_t6_8M_UR50D-contact-regression.pt
+    PF00018|BOI2_YEAST     L=51   LL(x)=-0.4204  (16 cells, 8s)
+    cytochrome_c           L=104  LL(x)=-0.3602  (16 cells, 9s)
+    protein_G_B1           L=56   LL(x)=-0.2569  (16 cells, 9s)
+    ubiquitin              L=76   LL(x)=-0.3856  (16 cells, 10s)
+
+  loading esm2_t12_35M_UR50D  (64 cells)
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t12_35M_UR50D.pt" to /scratch/author/.cache/torch/hub/checkpoints/esm2_t12_35M_UR50D.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t12_35M_UR50D-contact-regression.pt" to /scratch/author/.cache/torch/hub/checkpoints/esm2_t12_35M_UR50D-contact-regression.pt
+    PF00018|BOI2_YEAST     L=51   LL(x)=-0.3539  (16 cells, 18s)
+    cytochrome_c           L=104  LL(x)=-0.2847  (16 cells, 23s)
+    protein_G_B1           L=56   LL(x)=-0.2419  (16 cells, 24s)
+    ubiquitin              L=76   LL(x)=-0.1688  (16 cells, 26s)
+
+  loading esm2_t30_150M_UR50D  (64 cells)
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t30_150M_UR50D.pt" to /scratch/author/.cache/torch/hub/checkpoints/esm2_t30_150M_UR50D.pt
+Downloading: "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t30_150M_UR50D-contact-regression.pt" to /scratch/author/.cache/torch/hub/checkpoints/esm2_t30_150M_UR50D-contact-regression.pt
+    PF00018|BOI2_YEAST     L=51   LL(x)=-0.2266  (16 cells, 52s)
+    cytochrome_c           L=104  LL(x)=-0.2519  (16 cells, 70s)
+    protein_G_B1           L=56   LL(x)=-0.2475  (16 cells, 81s)
+    ubiquitin              L=76   LL(x)=-0.1084  (16 cells, 94s)
+
+  loading esm2_t33_650M_UR50D  (64 cells)
+    PF00018|BOI2_YEAST     L=51   LL(x)=-0.2278  (16 cells, 147s)
+    cytochrome_c           L=104  LL(x)=-0.2116  (16 cells, 201s)
+    protein_G_B1           L=56   LL(x)=-0.2410  (16 cells, 216s)
+    ubiquitin              L=76   LL(x)=-0.0690  (16 cells, 266s)
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c15_shift_saturation.csv (256 rows)
+
+==============================================================================
+C15 ANALYSIS  (Amendment 15; thresholds fixed before measurement)
+==============================================================================
+
+random arm  (REGISTERED)
+  model                    dLL m2       m6      m10      m20 |    ov m2       m6      m10      m20
+  t6_8M                     0.067    0.158    0.150    0.205 |    0.375    0.172    0.143    0.042
+  t12_35M                   0.173    0.286    0.259    0.320 |    0.538    0.118    0.075    0.027
+  t30_150M                  0.184    0.346    0.303    0.358 |    0.712    0.276    0.160    0.028
+  t33_650M                  0.208    0.440    0.365    0.384 |    0.743    0.272    0.165    0.017
+
+In-class arm  (descriptive only, NOT registered)
+  model                    dLL m2       m6      m10      m20 |    ov m2       m6      m10      m20
+  t6_8M                     0.052    0.079    0.115    0.151 |    0.592    0.433    0.293    0.211
+  t12_35M                   0.072    0.133    0.166    0.202 |    0.853    0.722    0.424    0.367
+  t30_150M                  0.076    0.138    0.196    0.226 |    0.909    0.795    0.640    0.623
+  t33_650M                  0.091    0.163    0.238    0.297 |    0.829    0.755    0.508    0.501
+  (realized m saturates at 15/20 for this builder, so a dLL plateau here is
+   partly the permutation builder and is NOT evidence for saturation.)
+
+------------------------------------------------------------------------------
+REGISTERED TEST, random arm, per scale
+  P1 saturation:        dLL(m20) - dLL(m6)      <= +0.05
+  P2 continued collapse: overlap(m6) - overlap(m20) >= 0.10
+  model                      dLL rise       P1   overlap fall       P2 replicates
+  t6_8M                        0.0472     PASS         0.1302     PASS        YES
+  t12_35M                      0.0341     PASS         0.0915     FAIL         no
+  t30_150M                     0.0120     PASS         0.2478     PASS        YES
+  t33_650M                    -0.0559     PASS         0.2552     PASS        YES
+
+VERDICT:
+  PARTIAL: 3 of 4 scales replicate the conjunction; P1 failed at 0.
+  Below the refutation bar, above nothing. Report per-scale, claim only the
+  scales that pass, and say plainly which did not.
+
+NOTE: dLL is NOT comparable across models (different supports, temperatures,
+corpora). Every comparison above is a model against ITSELF at two values of m.

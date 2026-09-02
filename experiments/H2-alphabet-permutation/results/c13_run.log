@@ -1,0 +1,23 @@
+C13 pseudolikelihood Potts invariance  (threads pinned to 1)
+relabeling: random, m=20, realized 20
+
+  ubiquitin      region 0..67 of MSA query, ident=0.96, depth 3000, L=67, pdb cov=100%
+    mean-field  P@L/2=0.3333 (n_eval=33)  [1.2s]
+    plm zero   P@L/2=0.5152 (mf 0.3333, gate PASS)  max|dS|=3.808e-03  rel=1.88e-03  top-L/2 overlap=1.000  permuted P=0.5152  [864s]
+    plm random P@L/2=0.5152 (mf 0.3333, gate PASS)  max|dS|=3.757e-03  rel=1.85e-03  top-L/2 overlap=0.970  permuted P=0.4848  [970s]
+
+  protein_G_B1   region 226..282 of MSA query, ident=0.96, depth 3000, L=56, pdb cov=100%
+    mean-field  P@L/2=0.2143 (n_eval=28)  [0.8s]
+    plm zero   P@L/2=0.2143 (mf 0.2143, gate PASS)  max|dS|=1.950e-03  rel=1.33e-03  top-L/2 overlap=1.000  permuted P=0.2143  [560s]
+    plm random P@L/2=0.2143 (mf 0.2143, gate PASS)  max|dS|=5.171e-03  rel=3.52e-03  top-L/2 overlap=1.000  permuted P=0.2143  [701s]
+
+========================================================================
+correctness gate: PASS on all 4 fits (plm >= mean-field - 0.02)
+  zero   init:  max rel|dS| = 1.88e-03   min top-L/2 overlap = 1.000
+  random init:  max rel|dS| = 3.52e-03   min top-L/2 overlap = 0.970
+
+zero-init is 2x tighter than random-init in rel|dS| -- the trajectory of the
+relabelled problem is the exact image of the original when the start point is
+equivariant, so invariance does not depend on convergence.
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c13_plm_invariance.csv (4 rows)

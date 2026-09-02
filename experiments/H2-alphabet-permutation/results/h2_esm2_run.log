@@ -1,0 +1,138 @@
+model=esm2_t33_650M_UR50D device=cuda  proteins=9
+   PF00013|B3RHY5_TRIAD         L=67
+   PF00018|BOI2_YEAST           L=51
+   PF00027|P73234_SYNY3         L=89
+   PF00072|AGMR_PSEAE           L=114
+   PF00076|LA_HUMAN             L=69
+   cytochrome_c                 L=104
+   lysozyme_T4                  L=164
+   protein_G_B1                 L=56
+   ubiquitin                    L=76
+
+PF00013|B3RHY5_TRIAD  L=67  baseline 32.0s  (chance overlap 0.021)
+   random        m=2   overlap=0.525+-0.174  spearman=0.520
+   random        m=6   overlap=0.141+-0.179  spearman=0.259
+   random        m=10  overlap=0.010+-0.014  spearman=0.086
+   random        m=20  overlap=0.010+-0.014  spearman=0.109
+   In-class  m=2   overlap=0.980+-0.014  spearman=0.972
+   In-class  m=6   overlap=0.879+-0.025  spearman=0.900
+   In-class  m=10  overlap=0.818+-0.065  spearman=0.860
+   In-class  m=20  overlap=0.828+-0.014  spearman=0.836
+   Cross-class       m=2   overlap=0.354+-0.414  spearman=0.311
+   Cross-class       m=6   overlap=0.020+-0.014  spearman=0.052
+   Cross-class       m=10  overlap=0.010+-0.014  spearman=0.112
+   Cross-class       m=20  overlap=0.030+-0.000  spearman=0.063
+
+PF00018|BOI2_YEAST  L=51  baseline 22.2s  (chance overlap 0.032)
+   random        m=2   overlap=0.787+-0.050  spearman=0.781
+   random        m=6   overlap=0.240+-0.173  spearman=0.169
+   random        m=10  overlap=0.027+-0.038  spearman=0.040
+   random        m=20  overlap=0.013+-0.019  spearman=0.081
+   In-class  m=2   overlap=0.907+-0.038  spearman=0.953
+   In-class  m=6   overlap=0.893+-0.019  spearman=0.886
+   In-class  m=10  overlap=0.520+-0.322  spearman=0.478
+   In-class  m=20  overlap=0.547+-0.132  spearman=0.537
+   Cross-class       m=2   overlap=0.560+-0.229  spearman=0.550
+   Cross-class       m=6   overlap=0.307+-0.272  spearman=0.280
+   Cross-class       m=10  overlap=0.013+-0.019  spearman=0.000
+   Cross-class       m=20  overlap=0.040+-0.000  spearman=0.054
+
+PF00027|P73234_SYNY3  L=89  baseline 63.1s  (chance overlap 0.015)
+   random        m=2   overlap=0.598+-0.423  spearman=0.615
+   random        m=6   overlap=0.311+-0.439  spearman=0.343
+   random        m=10  overlap=0.121+-0.141  spearman=0.135
+   random        m=20  overlap=0.000+-0.000  spearman=0.099
+   In-class  m=2   overlap=0.856+-0.086  spearman=0.855
+   In-class  m=6   overlap=0.864+-0.067  spearman=0.793
+   In-class  m=10  overlap=0.795+-0.049  spearman=0.728
+   In-class  m=20  overlap=0.841+-0.019  spearman=0.789
+   Cross-class       m=2   overlap=0.348+-0.413  spearman=0.367
+   Cross-class       m=6   overlap=0.106+-0.150  spearman=0.150
+   Cross-class       m=10  overlap=0.000+-0.000  spearman=0.101
+   Cross-class       m=20  overlap=0.023+-0.000  spearman=0.069
+
+PF00072|AGMR_PSEAE  L=114  baseline 104.5s  (chance overlap 0.011)
+   random        m=2   overlap=0.801+-0.088  spearman=0.847
+   random        m=6   overlap=0.573+-0.115  spearman=0.589
+   random        m=10  overlap=0.070+-0.087  spearman=0.293
+   random        m=20  overlap=0.018+-0.014  spearman=0.145
+   In-class  m=2   overlap=0.918+-0.008  spearman=0.985
+   In-class  m=6   overlap=0.848+-0.008  spearman=0.933
+   In-class  m=10  overlap=0.784+-0.066  spearman=0.791
+   In-class  m=20  overlap=0.749+-0.050  spearman=0.749
+   Cross-class       m=2   overlap=0.725+-0.199  spearman=0.804
+   Cross-class       m=6   overlap=0.509+-0.348  spearman=0.601
+   Cross-class       m=10  overlap=0.000+-0.000  spearman=0.177
+   Cross-class       m=20  overlap=0.018+-0.000  spearman=0.210
+
+PF00076|LA_HUMAN  L=69  baseline 68.1s  (chance overlap 0.021)
+   random        m=2   overlap=0.716+-0.050  spearman=0.727
+   random        m=6   overlap=0.255+-0.300  spearman=0.221
+   random        m=10  overlap=0.029+-0.024  spearman=0.003
+   random        m=20  overlap=0.020+-0.028  spearman=0.059
+   In-class  m=2   overlap=0.912+-0.000  spearman=0.961
+   In-class  m=6   overlap=0.833+-0.050  spearman=0.877
+   In-class  m=10  overlap=0.745+-0.050  spearman=0.775
+   In-class  m=20  overlap=0.735+-0.048  spearman=0.698
+   Cross-class       m=2   overlap=0.539+-0.356  spearman=0.490
+   Cross-class       m=6   overlap=0.225+-0.257  spearman=0.194
+   Cross-class       m=10  overlap=0.010+-0.014  spearman=0.075
+   Cross-class       m=20  overlap=0.000+-0.000  spearman=0.094
+
+cytochrome_c  L=104  baseline 150.4s  (chance overlap 0.012)
+   random        m=2   overlap=0.840+-0.059  spearman=0.927
+   random        m=6   overlap=0.532+-0.160  spearman=0.594
+   random        m=10  overlap=0.218+-0.308  spearman=0.299
+   random        m=20  overlap=0.000+-0.000  spearman=0.072
+   In-class  m=2   overlap=0.904+-0.027  spearman=0.971
+   In-class  m=6   overlap=0.859+-0.024  spearman=0.945
+   In-class  m=10  overlap=0.731+-0.000  spearman=0.860
+   In-class  m=20  overlap=0.699+-0.018  spearman=0.821
+   Cross-class       m=2   overlap=0.737+-0.055  spearman=0.843
+   Cross-class       m=6   overlap=0.186+-0.127  spearman=0.292
+   Cross-class       m=10  overlap=0.000+-0.000  spearman=0.071
+   Cross-class       m=20  overlap=0.019+-0.000  spearman=0.116
+
+lysozyme_T4  L=164  baseline 319.5s  (chance overlap 0.007)
+   random        m=2   overlap=0.829+-0.080  spearman=0.818
+   random        m=6   overlap=0.439+-0.326  spearman=0.449
+   random        m=10  overlap=0.171+-0.165  spearman=0.399
+   random        m=20  overlap=0.016+-0.023  spearman=0.226
+   In-class  m=2   overlap=0.927+-0.000  spearman=0.961
+   In-class  m=6   overlap=0.870+-0.040  spearman=0.890
+   In-class  m=10  overlap=0.780+-0.030  spearman=0.826
+   In-class  m=20  overlap=0.752+-0.030  spearman=0.752
+   Cross-class       m=2   overlap=0.707+-0.100  spearman=0.737
+   Cross-class       m=6   overlap=0.232+-0.217  spearman=0.381
+   Cross-class       m=10  overlap=0.024+-0.010  spearman=0.319
+   Cross-class       m=20  overlap=0.000+-0.000  spearman=0.301
+
+protein_G_B1  L=56  baseline 32.8s  (chance overlap 0.028)
+   random        m=2   overlap=0.393+-0.228  spearman=0.678
+   random        m=6   overlap=0.155+-0.118  spearman=0.456
+   random        m=10  overlap=0.048+-0.045  spearman=0.133
+   random        m=20  overlap=0.048+-0.017  spearman=0.062
+   In-class  m=2   overlap=0.631+-0.017  spearman=0.858
+   In-class  m=6   overlap=0.488+-0.061  spearman=0.754
+   In-class  m=10  overlap=0.250+-0.077  spearman=0.521
+   In-class  m=20  overlap=0.071+-0.029  spearman=0.264
+   Cross-class       m=2   overlap=0.357+-0.175  spearman=0.621
+   Cross-class       m=6   overlap=0.214+-0.117  spearman=0.360
+   Cross-class       m=10  overlap=0.131+-0.118  spearman=0.199
+   Cross-class       m=20  overlap=0.107+-0.000  spearman=0.104
+
+ubiquitin  L=76  baseline 64.6s  (chance overlap 0.018)
+   random        m=2   overlap=0.833+-0.025  spearman=0.845
+   random        m=6   overlap=0.544+-0.251  spearman=0.553
+   random        m=10  overlap=0.202+-0.230  spearman=0.319
+   random        m=20  overlap=0.009+-0.012  spearman=0.181
+   In-class  m=2   overlap=0.877+-0.012  spearman=0.942
+   In-class  m=6   overlap=0.746+-0.033  spearman=0.861
+   In-class  m=10  overlap=0.737+-0.037  spearman=0.811
+   In-class  m=20  overlap=0.675+-0.045  spearman=0.766
+   Cross-class       m=2   overlap=0.798+-0.130  spearman=0.860
+   Cross-class       m=6   overlap=0.421+-0.299  spearman=0.431
+   Cross-class       m=10  overlap=0.053+-0.000  spearman=0.170
+   Cross-class       m=20  overlap=0.000+-0.000  spearman=0.178
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/results/h2_esm2_invariance.csv (315 rows)

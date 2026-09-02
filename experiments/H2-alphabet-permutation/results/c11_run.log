@@ -1,0 +1,39 @@
+C11 AMPLIFY 120M  device=cuda  batch=16
+  gate target protein_G_B1   1PGB_A cov=100% ident=100%
+  gate target ubiquitin      1UBQ_A cov=100% ident=100%
+loaded AMPLIFY_120M_2024 in 461s  params=118.3M
+
+  ubiquitin      L=76 baseline 31.7s (overlap chance 0.018)  GATE P@L/2=0.237 vs chance 0.053 = 4.4x
+    random        m=2   overlap=0.329+-0.197  spearman=0.415
+    random        m=6   overlap=0.118+-0.066  spearman=-0.048
+    random        m=10  overlap=0.066+-0.013  spearman=0.121
+    random        m=20  overlap=0.026+-0.000  spearman=-0.012
+    In-class  m=2   overlap=0.605+-0.000  spearman=0.754
+    In-class  m=6   overlap=0.592+-0.013  spearman=0.578
+    In-class  m=10  overlap=0.447+-0.053  spearman=0.496
+    In-class  m=20  overlap=0.421+-0.026  spearman=0.391
+  protein_G_B1   L=56 baseline 15.1s (overlap chance 0.028)  GATE P@L/2=0.321 vs chance 0.080 = 4.0x
+    random        m=2   overlap=0.732+-0.054  spearman=0.664
+    random        m=6   overlap=0.393+-0.071  spearman=0.341
+    random        m=10  overlap=0.125+-0.018  spearman=0.129
+    random        m=20  overlap=0.143+-0.107  spearman=0.029
+    In-class  m=2   overlap=0.821+-0.000  spearman=0.790
+    In-class  m=6   overlap=0.643+-0.000  spearman=0.513
+    In-class  m=10  overlap=0.464+-0.071  spearman=0.370
+    In-class  m=20  overlap=0.321+-0.036  spearman=0.285
+  cytochrome_c   L=104 baseline 35.4s (overlap chance 0.012)
+    random        m=2   overlap=0.615+-0.135  spearman=0.773
+    random        m=6   overlap=0.154+-0.154  spearman=0.179
+    random        m=10  overlap=0.183+-0.183  spearman=0.287
+    random        m=20  overlap=0.000+-0.000  spearman=0.080
+    In-class  m=2   overlap=0.885+-0.000  spearman=0.959
+    In-class  m=6   overlap=0.779+-0.010  spearman=0.909
+    In-class  m=10  overlap=0.567+-0.029  spearman=0.782
+    In-class  m=20  overlap=0.500+-0.077  spearman=0.706
+
+========================================================================
+GATE protein_G_B1   P@L/2=0.321  chance=0.080  ratio=4.0x  PASS
+GATE ubiquitin      P@L/2=0.237  chance=0.053  ratio=4.4x  PASS
+GATE VERDICT: PASS on protein_G_B1, ubiquitin -- the permuted cells above are reportable.
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c11_amplify.csv (50 rows)

@@ -1,0 +1,16 @@
+.cache/
+.env_build/
+.claude/
+repos/
+data/raw/
+data/proteingym/
+*.pt
+*.ckpt
+*.safetensors
+*.a3m
+*.tar.gz
+__pycache__/
+*.pyc
+data/openreview/iclr_2026.parquet
+data/pfam/Pfam-A.seed.gz
+.DS_Store

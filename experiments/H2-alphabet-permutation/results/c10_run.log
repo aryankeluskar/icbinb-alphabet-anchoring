@@ -1,0 +1,36 @@
+C10 Potts crossing point  (Amendments 10 + 10a)
+loaded ESM-2 650M on cuda (batch 8)
+
+=== ubiquitin (1UBQ_A, L=76) ===
+  MSA depth 16228, match cols 89
+  region: MSA cols 0-66 -> query residues 10-76 (67 aa), identity 0.955
+  rows kept after <=50% gap filter: 16228 of 16228
+  1UBQ_A  coverage 100%  identity 100%
+  restricted: 67 of 76 positions, 1540 candidate pairs, 70 true LR contacts, chance 0.0455
+  potts    identity           seed=0  P@L/2 = 0.3158  (6.9x chance)  n_eval=38 
+  potts    random             seed=0  P@L/2 = 0.3158  (6.9x chance)  n_eval=38 max|dS|=2.3e-14
+  potts    random             seed=1  P@L/2 = 0.3158  (6.9x chance)  n_eval=38 max|dS|=1.8e-14
+  esm2     identity-fulllen   seed=0  P@L/2 = 0.7632  (16.8x chance)  n_eval=38 C9 comparison
+  esm2     identity           seed=0  P@L/2 = 0.7368  (16.2x chance)  n_eval=38 
+  esm2     random             seed=0  P@L/2 = 0.0789  (1.7x chance)  n_eval=38 
+  esm2     random             seed=1  P@L/2 = 0.0263  (0.6x chance)  n_eval=38 
+  --- ubiquitin: chance 0.0455 | Potts 0.3158 | ESM-2 id 0.7368 | ESM-2 pi 0.0526
+  VERDICT ubiquitin: CROSSING -- ESM-2 goes from 2.33x Potts to 0.17x Potts
+
+=== protein_G_B1 (1PGB_A, L=56) ===
+  MSA depth 3109, match cols 448
+  region: MSA cols 226-281 -> query residues 1-56 (56 aa), identity 0.964
+  rows kept after <=50% gap filter: 3043 of 3109
+  1PGB_A  coverage 100%  identity 100%
+  restricted: 56 of 56 positions, 990 candidate pairs, 79 true LR contacts, chance 0.0798
+  potts    identity           seed=0  P@L/2 = 0.1786  (2.2x chance)  n_eval=28 
+  potts    random             seed=0  P@L/2 = 0.1786  (2.2x chance)  n_eval=28 max|dS|=1.1e-14
+  potts    random             seed=1  P@L/2 = 0.1786  (2.2x chance)  n_eval=28 max|dS|=1.3e-14
+  esm2     identity-fulllen   seed=0  P@L/2 = 0.5000  (6.3x chance)  n_eval=28 C9 comparison
+  esm2     identity           seed=0  P@L/2 = 0.5000  (6.3x chance)  n_eval=28 
+  esm2     random             seed=0  P@L/2 = 0.0714  (0.9x chance)  n_eval=28 
+  esm2     random             seed=1  P@L/2 = 0.1429  (1.8x chance)  n_eval=28 
+  --- protein_G_B1: chance 0.0798 | Potts 0.1786 | ESM-2 id 0.5000 | ESM-2 pi 0.1071
+  VERDICT protein_G_B1: CROSSING -- ESM-2 goes from 2.80x Potts to 0.60x Potts
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/results/h2_c10_potts_crossing.csv  (14 rows)

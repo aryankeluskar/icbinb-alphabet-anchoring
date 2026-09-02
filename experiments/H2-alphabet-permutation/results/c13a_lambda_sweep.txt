@@ -1,0 +1,5 @@
+mean-field P@L/2 = 0.3333   (L=67, N=3000)
+  lam=0.001  plm P@L/2 = 0.5152   PASS   [403s]
+  lam=0.01   plm P@L/2 = 0.4848   PASS   [304s]
+  lam=0.1    plm P@L/2 = 0.3636   PASS   [471s]
+DONE

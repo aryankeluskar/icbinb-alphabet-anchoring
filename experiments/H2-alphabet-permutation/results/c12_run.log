@@ -1,0 +1,30 @@
+C12 dose-response  device=cuda  model=esm2_t33_650M_UR50D
+BLOSUM sign assert OK: sev(K->R)=-2 < sev(K->W)=3
+
+loaded esm2_t33_650M_UR50D
+
+ubiquitin L=76  chance=0.0183  52 permutations
+    10/52  (1145s elapsed)
+    20/52  (2194s elapsed)
+    30/52  (3330s elapsed)
+    40/52  (4481s elapsed)
+    50/52  (5601s elapsed)
+    52/52  (5833s elapsed)
+  rho over 48 full derangements (m=20); 4 anchors excluded (m=15,15,16,14)
+  cost range -1.43 to 2.99   overlap range 0.000 to 0.605
+  SPEARMAN rho(weighted cost, overlap)   = -0.328   WEAK (-0.6 < rho < -0.3)
+  SPEARMAN rho(unweighted cost, overlap) = -0.325   agrees
+
+protein_G_B1 L=56  chance=0.0283  57 permutations
+    10/57  (679s elapsed)
+    20/57  (1389s elapsed)
+    30/57  (2079s elapsed)
+    40/57  (2730s elapsed)
+    50/57  (3336s elapsed)
+    57/57  (3699s elapsed)
+  rho over 53 full derangements (m=20); 4 anchors excluded (m=15,15,16,14)
+  cost range -1.41 to 2.93   overlap range 0.000 to 0.143
+  SPEARMAN rho(weighted cost, overlap)   = +0.079   REFUTED (|rho| < 0.3)
+  SPEARMAN rho(unweighted cost, overlap) = +0.100   agrees
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c12_dose_response.csv (109 rows)

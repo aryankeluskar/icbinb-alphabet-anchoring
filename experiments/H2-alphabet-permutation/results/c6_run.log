@@ -1,0 +1,45 @@
+C6 matched-Hamming control  model=esm2_t33_650M_UR50D device=cuda
+
+cytochrome_c L=104
+   random        m=2   d=10   perm=0.840  unif=0.795  comp=0.853
+   random        m=6   d=16   perm=0.532  unif=0.372  comp=0.385
+   random        m=10  d=55   perm=0.218  unif=0.128  comp=0.058
+   random        m=20  d=104  perm=0.000  unif=0.019  comp=0.013
+   In-class  m=2   d=20   perm=0.904  unif=0.853  comp=0.840
+   In-class  m=6   d=36   perm=0.859  unif=0.673  comp=0.603
+   In-class  m=10  d=60   perm=0.731  unif=0.026  comp=0.006
+   In-class  m=20  d=76   perm=0.699  unif=0.013  comp=0.013
+   Cross-class       m=2   d=18   perm=0.737  unif=0.750  comp=0.769
+   Cross-class       m=6   d=32   perm=0.186  unif=0.282  comp=0.622
+   Cross-class       m=10  d=69   perm=0.000  unif=0.006  comp=0.006
+   Cross-class       m=20  d=90   perm=0.019  unif=0.038  comp=0.000
+
+protein_G_B1 L=56
+   random        m=2   d=15   perm=0.393  unif=0.500  comp=0.357
+   random        m=6   d=11   perm=0.155  unif=0.131  comp=0.262
+   random        m=10  d=26   perm=0.048  unif=0.083  comp=0.012
+   random        m=20  d=56   perm=0.048  unif=0.060  comp=0.060
+   In-class  m=2   d=6    perm=0.631  unif=0.571  comp=0.464
+   In-class  m=6   d=21   perm=0.488  unif=0.226  comp=0.095
+   In-class  m=10  d=36   perm=0.250  unif=0.060  comp=0.060
+   In-class  m=20  d=46   perm=0.071  unif=0.083  comp=0.048
+   Cross-class       m=2   d=7    perm=0.357  unif=0.571  comp=0.452
+   Cross-class       m=6   d=16   perm=0.214  unif=0.202  comp=0.250
+   Cross-class       m=10  d=31   perm=0.131  unif=0.024  comp=0.060
+   Cross-class       m=20  d=45   perm=0.107  unif=0.071  comp=0.071
+
+ubiquitin L=76
+   random        m=2   d=11   perm=0.833  unif=0.833  comp=0.833
+   random        m=6   d=17   perm=0.544  unif=0.544  comp=0.447
+   random        m=10  d=45   perm=0.202  unif=0.018  comp=0.000
+   random        m=20  d=76   perm=0.009  unif=0.026  comp=0.018
+   In-class  m=2   d=11   perm=0.877  unif=0.825  comp=0.807
+   In-class  m=6   d=29   perm=0.746  unif=0.579  comp=0.640
+   In-class  m=10  d=53   perm=0.737  unif=0.175  comp=0.009
+   In-class  m=20  d=64   perm=0.675  unif=0.035  comp=0.026
+   Cross-class       m=2   d=7    perm=0.798  unif=0.868  comp=0.816
+   Cross-class       m=6   d=20   perm=0.421  unif=0.474  comp=0.456
+   Cross-class       m=10  d=46   perm=0.053  unif=0.105  comp=0.184
+   Cross-class       m=20  d=64   perm=0.000  unif=0.026  comp=0.000
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/results/h2_c6_matched_hamming.csv (306 rows)

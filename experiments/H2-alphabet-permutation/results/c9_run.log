@@ -1,0 +1,21 @@
+C9 true precision  device=cuda
+  ubiquitin      1UBQ_A  L=76  cov=100% ident=100%  LR contacts=111  chance=0.053
+  protein_G_B1   1PGB_A  L=56  cov=100% ident=100%  LR contacts=79  chance=0.080
+loaded ESM-2 650M
+
+ubiquitin  identity P@L/2 = 0.763  (expected 0.763, gate=PASS)  n_eval=38  chance=0.053
+   random        m=2   (realized 2.0)  P@L/2=0.829+-0.066   delta=+0.066   x chance=15.5
+   random        m=10  (realized 10.0)  P@L/2=0.461+-0.303   delta=-0.303   x chance=8.6
+   random        m=20  (realized 20.0)  P@L/2=0.053+-0.026   delta=-0.711   x chance=1.0
+   In-class  m=2   (realized 2.0)  P@L/2=0.868+-0.000   delta=+0.105   x chance=16.3
+   In-class  m=10  (realized 10.0)  P@L/2=0.882+-0.013   delta=+0.118   x chance=16.5
+   In-class  m=20  (realized 15.0)  P@L/2=0.855+-0.039   delta=+0.092   x chance=16.0
+protein_G_B1  identity P@L/2 = 0.500  (expected 0.500, gate=PASS)  n_eval=28  chance=0.080
+   random        m=2   (realized 2.0)  P@L/2=0.625+-0.018   delta=+0.125   x chance=7.8
+   random        m=10  (realized 10.0)  P@L/2=0.054+-0.054   delta=-0.446   x chance=0.7
+   random        m=20  (realized 20.0)  P@L/2=0.107+-0.036   delta=-0.393   x chance=1.3
+   In-class  m=2   (realized 2.0)  P@L/2=0.607+-0.000   delta=+0.107   x chance=7.6
+   In-class  m=10  (realized 10.0)  P@L/2=0.268+-0.054   delta=-0.232   x chance=3.4
+   In-class  m=20  (realized 15.0)  P@L/2=0.071+-0.000   delta=-0.429   x chance=0.9
+
+wrote /scratch/author/icbinb/experiments/H2-alphabet-permutation/code/../results/h2_c9_true_precision.csv (26 rows)

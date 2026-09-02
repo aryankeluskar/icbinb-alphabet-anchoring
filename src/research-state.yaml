@@ -1,0 +1,433 @@
+project: "Is protein-language-model competence a distribution-bounded mirage?"
+venue:
+  name: ICBINB-BIO @ NeurIPS 2026
+  url: https://icbinb-bio.github.io/
+  deadline: 2026-08-29  # AoE
+  page_limit: 8         # full paper, excl. refs/appendix; 4 for tiny paper
+  archival: false
+  double_blind: true
+  dual_submission_allowed: true
+created: 2026-08-05
+
+research_question: >
+  Zhao et al. (DataAlchemy) argue chain-of-thought is a "mirage": competence bounded by
+  train/test distribution discrepancy along task / length / format axes, diagnosed via a
+  controllable from-scratch environment and a trace-vs-answer dissociation analysis.
+  Protein language models emit no reasoning trace, so the transfer is NOT direct. We ask
+  what actually ports, and exploit one asymmetry: unlike frontier LLMs, pLM training
+  corpora are PUBLIC AND VERSIONED, so the distribution discrepancy Delta can be
+  *measured* rather than assumed. This is the limitation Zhao et al. explicitly flag
+  (their Limitation ii) and cannot address.
+
+framing_risk: >
+  CRITICAL. "CoT is a mirage therefore ESM is a mirage" is a category error and a
+  reviewer will kill it in paragraph one. The paper must state up front that what ports
+  is (a) the dialable Delta knob, (b) the trace/answer decomposition, (c) train-from-
+  scratch leakage control -- NOT the claim about reasoning traces.
+
+hypotheses:
+  H1:
+    slug: measured-delta
+    claim: >
+      pLM downstream performance is a function of MEASURED train/test discrepancy
+      (corpus-entry-year, homolog count at snapshot t, identity to nearest training
+      neighbour), not of corpus size. Predicts the non-monotonic year-over-year curve
+      reported by Spinner et al. is a consequence, not an anomaly.
+    prediction: >
+      Per-assay Spearman on ProteinGym regresses significantly on measured Delta;
+      partial correlation with raw corpus size vanishes once Delta is controlled.
+    status: unblocked-but-demoted
+    blocker: null
+    priority: 3
+    novelty: >
+      LARGELY TAKEN. Spinner ran the AMPLIFY-yearly x ProteinGym setup; Hou computed our
+      exact covariate; Gordon established causality via influence functions. DROP any
+      "first to link corpus statistics to pLM behaviour" claim. Narrow residue that
+      survives: regress PERFORMANCE not likelihood, per-protein date-of-entry rather than
+      a static MSA-depth covariate, and the screening-off test (does Delta absorb year?).
+    assets: >
+      AMPLIFY yearly checkpoints ARE public -- git BRANCHES in chandar-lab/AMPLIFY_120M,
+      revision=AMPLIFY_120M_<YEAR>, 2011-2024, MIT, ungated, downloaded (8.4 GB).
+      MUST load in fp32: yearly branches ship pre-fix rmsnorm.py and trust_remote_code
+      loads code from the same revision, which diverges SILENTLY under bf16/fp16.
+  H2:
+    slug: alphabet-permutation
+    claim: >
+      A Potts/MRF coevolution model is EXACTLY invariant to a consistent bijective
+      relabeling of the amino-acid alphabet applied across a whole family, because
+      coevolution is a statistic over an alignment. ESM-2 is not, because (per Zhang &
+      Ovchinnikov) it stores motif->contact lookups keyed on literal residue identity.
+    prediction: >
+      Contact precision from the categorical Jacobian: MRF invariant under permutation
+      (delta ~ 0); ESM-2 collapses toward chance. Magnitude of collapse scales with
+      number of residue types permuted.
+    status: in-progress
+    blocker: null
+    priority: 1
+    novelty: >
+      OPEN, but narrowed. Rao et al. 2021 Fig 6 already shuffles pLM inputs against a
+      Potts reference on the POSITIONAL and COVARIATION axes. Our novelty is the AXIS --
+      residue identity -- not the technique. Must cite Rao explicitly.
+    result_so_far: >
+      Potts side settled: exactly invariant, verified to 1e-15 on synthetic, real Pfam and
+      adversarially corrupted alignments. ESM-2 650M categorical Jacobian collapses:
+      contact-set overlap 0.525 (m=2) -> 0.141 (m=6) -> 0.010 (m=10, BELOW chance 0.021).
+      But In-class swaps barely hurt (0.980 at m=2 vs 0.525 random), so ESM-2 does
+      encode biochemical similarity -- the failure is of the alphabet-abstract algorithm,
+      not of biochemistry. C6 matched-Hamming control running; it can still refute this.
+    c7_COMPLETE: >
+      DONE, 4 families, 136 cells. Potts on the same permuted alignments is exactly
+      1.000000 -- min = max = mean, enforced as an in-run assert, so every MSA-T number is
+      certified against an alignment that is statistically unchanged. MSA Transformer under
+      random relabeling: 0.775 -> 0.471 -> 0.244 -> 0.147 at m = 2/6/10/20, against a chance
+      floor of 0.013-0.046. In-class retains 0.536 at m=20. This is the STRONG branch of
+      Amendment 5: H2 does NOT narrow to single-sequence pLMs, because a model reading the
+      alignment at inference and retrained on nothing fails the same way. Two qualifications
+      that must survive into the paper: MSA-T degrades severely but does NOT reach chance
+      (ESM-2 650M does), so the verb is "severe degradation" not "collapse"; and the
+      In-class-vs-random dissociation replicates, so the biochemistry reading is not an
+      artifact of the single-sequence setting.
+    c8_c10_c11_COMPLETE: >
+      SCALE (C8, 4 proteins, n=8/cell, chance ~0.023). Random m=20: 0.042 (1.8x) / 0.027
+      (1.2x) / 0.028 (1.2x) / 0.017 (0.8x) at 8M/35M/150M/650M. In-class m=20: 0.211 /
+      0.367 / 0.623 / 0.501. Gap grows +0.170 / +0.340 / +0.596 / +0.484. Capacity buys
+      sensitivity to biochemical similarity and ZERO alphabet abstraction -- different axes,
+      and "bigger models understand proteins better" conflates them. Deliberately NOT claimed:
+      the 150M->650M dip (n=8, reads as a plateau). A 3B cell is polling for GPU headroom and
+      may not land; its absence is stated in the draft rather than hidden.
+      CROSSING (C10, identical restricted candidate set). Ubiquitin: ESM-2 0.737 vs Potts
+      0.316 = 2.33x before, 0.053 vs 0.316 = 0.17x after random m=20. Protein G: 2.80x ->
+      0.60x. Potts unchanged to 1e-14 in every row. This is the venue's "or misleads" criterion
+      in one number and it gets its own figure panel.
+      THIRD ARCHITECTURE (C11, AMPLIFY 120M -- different vocab, residue order, corpus and
+      feed-forward, matched capacity, IDENTICAL readout code). Validity gate passed before any
+      permuted cell ran (4.4x and 4.0x chance). Random m=20: 0.056 vs chance 0.020; cytochrome
+      c loses EVERY contact in its own top-L/2 (0.000). In-class m=20: 0.414. Dissociation
+      ratio widens 1.4x / 3.0x / 4.0x / 7.3x. So the cause is not one lab's tokenizer.
+      MAIN SWEEP, Cross-class arm (answers a standing Open Question): Cross-class falls FASTER than
+      random at m=6 and m=10 (0.226 vs 0.342; 0.006 vs 0.079). That is what "biochemistry is
+      encoded" predicts -- an arbitrary derangement preserves biochemical class by accident
+      more often than a deliberately cross-class one does. The two arms converge at m=20.
+    c13_c14_c15_COMPLETE: >
+      C13 pseudolikelihood Potts: 4/4 fits pass the accuracy gate on both proteins. Under
+      relabeling the contact SET is exactly identical from a zero (equivariant) init and 0.970
+      overlapping from a random init, with permuted precision identical; Amendment 13(b)'s
+      registered >=0.95 is met. The raw score matrix diverges at 1.9e-3, NOT machine precision,
+      and Amendment 13b's maxiter ladder shows why: rel|dS| = 1.1e-15 at 2 iterations, 1.4e-14
+      at 10, 1.2e-09 at 40, 1.9e-03 at 150, with top-L/2 overlap exactly 1.000 at every rung.
+      The solver grows the divergence; the formulation is symmetric. So the claim is bounded:
+      a pseudolikelihood fit is invariant AT THE LEVEL OF ITS PREDICTIONS, while
+      machine-precision score invariance stays a property of the closed-form estimator alone.
+      Do NOT repeat the script's own "zero-init is 2x tighter" line -- 1.9e-3 vs 3.5e-3 is
+      noise; the real difference is the contact set (1.000 vs 0.970).
+      C14 perceived shift: registered mediation test came out BRANCH C, ambiguous
+      (delta-R^2 0.131 against a 0.15 bar; partial Spearman +0.506 against a 0.30 bar;
+      marginal Spearman -0.700). Paper claims neither branch, as pre-committed.
+      C15 saturation, the follow-up that de-exploratorises C14's best observation: P1
+      (Delta_LL rise from m=6 to m=20 <= 0.05) PASSES AT ALL FOUR SCALES (+0.047, +0.034,
+      +0.012, -0.056), on a protein set sharing only PF00018 with C14's. The registered
+      CONJUNCTION with P2 (overlap fall >= 0.10) holds at 3 of 4; it fails at 35M, which had
+      already reached 0.118 overlap by m=6 and so had under 0.10 of absolute room left. Do not
+      restate that in relative terms to make it pass.
+      THE DOUBLE DISSOCIATION this buys: at every scale the random arm has Delta_LL flat while
+      overlap collapses to chance, and the In-class arm has Delta_LL climbing ~3x while
+      overlap stays high. A rising perceived shift is compatible with a preserved contact map
+      and a flat one with a destroyed map. Whatever governs the contact map, it is not how
+      unfamiliar the model finds the input.
+    in_flight_2026_08_05: >
+      ALL EXPERIMENTS COMPLETE as of 2026-08-12.
+      C12 dose-response: COMPLETE, both proteins. ubiquitin rho=-0.328, protein G rho=+0.079.
+      Neither registered branch cleanly met. Effect is categorical, not graded.
+      Main sweep: COMPLETE, 9 proteins (315 rows). Table 1 updated with 9-protein aggregates.
+      C8 3B: LANDED. random m=20 = 0.035 (1.1x chance), In-class = 0.526, gap = +0.491.
+      Scale table now has 5 rows (8M/35M/150M/650M/3B), range = 375x.
+      Readout 2: COMPLETE, 15/15 assays, 15/15 gates PASS. 11 signal-bearing.
+      random m=20 dRho = -0.52 (signal), -0.43 (all). In-class = -0.19/-0.16.
+      Cross-class = -0.54/-0.44. PSSM invariant to exact 0.
+      LaTeX paper: 8 pages, compiles clean, all numbers verified against CSVs.
+      Figure 1 (3 panels) generated and included.
+    c7_superseded_preliminary: >
+      SUPERSEDED — C7 is COMPLETE (4 families, 136 cells). See c7_COMPLETE above.
+  H3:
+    slug: epistatic-order
+    claim: >
+      DataAlchemy's k-step reasoning composition maps onto k-order epistasis. pLMs
+      interpolate within k seen in training and fail to compose to higher k.
+    prediction: >
+      Performance degrades with k, and is NON-MONOTONIC in model size at k>=2
+      (scale accelerates interpolation, not extrapolation).
+    status: unblocked
+    blocker: null
+    priority: 4
+    reframe: >
+      CRITICAL finding. ProteinGym's compute_fitness.py masks ONE position at a time and
+      SUMS per-site log-ratios, so the benchmarked score is additive BY CONSTRUCTION and
+      the Depth_k columns compare two additive models. The representation is never asked
+      to express an interaction. Reframe from "can pLMs compose?" to "does the scoring
+      protocol project away structure the representation contains?" (Tsui Walsh-Hadamard
+      R^2 = 0.72/0.66 suggests it does.)
+    assets: "ProteinGym is 72% multi-mutant (1.77M rows, max k=44); 95 models pre-scored."
+    inherited_confound: >
+      MEASURED in H4, applies to H3 directly. Any depth-stratified ProteinGym analysis
+      inherits range restriction: corr(k, within-k DMS std) median -1.000, negative in 77%
+      of assays. That is a SECOND artifact stacked on top of the additive-scoring problem
+      above. Both must be controlled before H3 is attempted, and neither is cheap. This is
+      the main reason H3 stays at priority 4 rather than being promoted after H4 died.
+    contested: >
+      biorxiv 2025.09.14.676130 claims pLMs DO capture epistasis zero-shot. Must engage.
+      Likely reconciliation: they test in-family, where k-order mutants are interpolation.
+  H4:
+    slug: format-severity
+    claim: >
+      DataAlchemy's insert/delete/modify are semantically empty noise; in proteins they
+      are real evolutionary operators with known fitness distributions. A mechanism-using
+      model degrades with BIOCHEMICAL severity; a pattern-matcher degrades with EDIT
+      DISTANCE.
+    prediction: >
+      Regressing score-drop on (edit_distance, BLOSUM62 score, burial, secondary
+      structure): edit distance dominates for pLMs; BLOSUM/structure dominates for
+      alignment baselines. PLM-GUARD colours by BLOSUM62 but never runs this regression.
+    status: REFUTED-AND-ABANDONED
+    blocker: null
+    priority: 99
+    novelty: "OPEN -- least contested angle. All ingredients exist; nobody runs the regression."
+    result: >
+      Two differently-powered designs failed the SAME registered prediction. Primary
+      per-variant analysis: flat null, every CI includes zero, z=1.10. Amendment 1
+      (within-cell Spearman, registered BEFORE running) fixed the power problem -- effects
+      rose from ~0.005 to ~0.3 -- and then refuted H4: D>0 for pLMs AND alignment models
+      alike (+0.270 vs +0.242, z=1.85 n.s.), when the whole hypothesis was that the two
+      families differ in SIGN. GEMME (+0.344), DeepSequence (+0.284) and EVE (+0.223) all
+      landed on the pLM side. Abandoned per the falsification clause in Amendment 1.
+    artifact_discovered: >
+      The universal D>0 is a property of ProteinGym, not of any model. Over all 69
+      multi-mutant assays, corr(k, within-k DMS std) has median -1.000, mean -0.521, and
+      is negative in 77% of assays: DMS dynamic range SHRINKS as mutation depth grows.
+      Range restriction mechanically depresses within-cell Spearman at high k for EVERY
+      scorer. See experiments/H4-format-severity/results/diag_range_restriction.txt.
+    lesson: >
+      A collinearity control is not a variance control. C1 verified k and mean severity
+      were near-orthogonal but never checked either IV HAD variance -- and
+      data/MULTI_MUTANT_INVENTORY.md already said 58/69 assays are k=2-only.
+  H5:
+    slug: esm3-order-dependence
+    claim: >
+      ESM-3's iterative unmasking is self-described as "chain of thought" and is trained
+      to be order-agnostic. If the final generation depends on unmasking order, the joint
+      distribution is incoherent -- a right answer reached by a path that could not have
+      produced it. This is the ONLY place the CoT framing is literal, not analogical.
+    prediction: "Final sequence/structure varies systematically with decoding order."
+    status: unblocked-but-deprioritised
+    blocker: null
+    priority: 5
+    novelty: >
+      PARTIALLY TAKEN -- order-dependence is a crowded 2026 text-diffusion subfield with a
+      published diagnostic. Keep only as an extension if time allows.
+      NOTE: ESM-3 is NO LONGER GATED (biohub/esm3-sm-open-v1, plain MIT).
+      TRAP: ESM-3's "chain of thought" means cross-track SS8->structure->sequence ordering,
+      NOT positional unmasking. Do not misdescribe it.
+
+baselines_required:
+  items:
+    - PSSM / position-specific scoring matrix
+    - BLOSUM62 substitution score
+    - one-hot + ridge regression
+    - GNM / ANM elastic network (SeqDance reports these BEAT pLMs on ordered proteins)
+    - MRF / Potts via inverse covariance (Dauparas et al. formulation)
+  note: >
+    ICBINB explicitly wants "unexpectedly strong simple baselines". These must appear in
+    every figure, not an appendix table.
+
+evaluation_locked:
+  primary_metric: Spearman rho (variant effect); long-range contact precision @ L/2 (structure)
+  leakage_control: >
+    MANDATORY. Random splits leak: same mutational position appears in train and test.
+    Use ProteinNPT contiguous + modulo splits. Report both leaked and controlled numbers
+    to demonstrate the gap -- the gap IS a result.
+
+compute:
+  gpu: 1x A100-SXM4-80GB (shared, ~50GB free)
+  scheduler: SLURM
+  scratch: /scratch (555TB free)
+  constraint: "System python 3.6.8 / torch 1.10 is unusable; env being built on /scratch."
+
+paper_spine: >
+  H2 ALONE, gone DEEP rather than broad. Revised twice on evidence, both times downward:
+  (i) the 123-paper survey found H1's ground largely occupied by Spinner/Hou/Gordon, so the
+  spine became H2+H4; (ii) H4 was then refuted by its own registered falsification clause,
+  so the spine is H2 and the response is depth (scale sweep, second readout, ground-truth
+  contacts), NOT a replacement third hypothesis. Adding breadth after a refutation is how
+  a paper ends up with three shallow experiments and no result.
+
+framing_correction_required: >
+  OPEN STRUCTURAL PROBLEM, identified 2026-08-05. The stated novelty hook is "unlike
+  frontier LLMs, Delta is MEASURABLE for pLMs because corpora are public and versioned".
+  H2 does not measure Delta -- it CONSTRUCTS a distribution shift, which is precisely what
+  Zhao et al. already do. The hook and the experiment are therefore disconnected, and a
+  reviewer will notice. Two resolutions:
+    (a) REFRAME (chosen). Sell H2 on its own terms -- pLM contact prediction is not an
+        alphabet-abstract computation, and a 20-line inverse-covariance baseline is exactly
+        invariant to a symmetry that 650M- and 100M-parameter neural models both violate.
+        Delta-measurability drops to a positioning paragraph in Related Work, not a claim.
+    (b) Instantiate H1 with the downloaded AMPLIFY yearly checkpoints. Rejected: ~24 days
+        to deadline and H1's ground is largely occupied anyway.
+  The paper must NOT open with a Delta-measurement promise it does not keep.
+
+open_gaps_to_paper:
+  - >
+    SCALE: COMPLETE (C8). 8M/35M/150M/650M/3B all landed. 375x parameter range.
+    Random m=20: 0.042/0.027/0.028/0.017/0.035 — pinned at chance at every scale.
+    In-class m=20: 0.211/0.367/0.623/0.501/0.526 — climbs roughly threefold.
+    Gap grows +0.170 to +0.491. Scale buys biochemistry, not alphabet abstraction.
+  - >
+    GROUND TRUTH: CLOSED. C9 COMPLETE, 26 cells, both targets, both regimes. Ubiquitin
+    random arm is the headline: P@L/2 falls from 0.763 (14.4x chance) to 0.053 (1.0x chance -- exactly the base
+    rate) at m=20, identity gate passed to 3 dp. m=2 shows NO damage, so it is a genuine
+    dose-response. The abstract should open with this, not with self-consistency, which
+    demotes to the control that closes the "harder input" objection. Caveats: n_eval=38
+    pairs, and the m=10 cell has +-0.303 spread over only 2 seeds.
+    THE DISSOCIATION IS PROTEIN-DEPENDENT and both halves must be reported. On ubiquitin
+    In-class relabeling of 15 of 20 residues does NOT damage the model at all (0.855 vs
+    0.763 unpermuted) while random m=20 hits the base rate -- same edit-distance regime,
+    opposite outcome, which is exactly the artifact control the review evidence says must
+    lead. On protein G In-class only degrades more SLOWLY (0.268 vs 0.054 at m=10) and
+    still reaches chance by realized m=15 (0.071 = 0.9x). So "In-class is harmless" is
+    a ubiquitin statement; the general claim is "In-class degrades substantially less
+    than random at matched m". Protein G is also weaker at identity (0.500, 6.3x chance,
+    n_eval=28) and its random arm is non-monotone at the floor (0.054 at m=10, 0.107 at
+    m=20). Every m=2 cell lands above identity in both regimes and both proteins -- with
+    n_eval 28-38 one pair is worth 0.026-0.036, so that is sampling noise, not improvement.
+    Original note: src/structures.py built and validated; all four targets pass the
+    sanity bar at 100% coverage. ESM-2 650M scores P@L/2 = 0.763 on ubiquitin (14x chance),
+    so the collapse is a collapse FROM COMPETENCE. C9 (Amendment 8) now measures precision
+    under permutation, restoring the locked protocol's ORIGINAL dependent variable.
+    CAVEAT to carry: cytochrome_c in EXTRA is human, 1HRC is horse heart at 88.5% identity.
+    C9 therefore uses only ubiquitin and protein G, which are 100% identical to their chains.
+  - >
+    SECOND TASK: IN PROGRESS (protocol-readout2-variant-effect.md). 15 ProteinGym assays,
+    single mutants only, which sidesteps both F5 additive scoring and F8 range restriction.
+    Validity gate PASSED exactly on assay 1 -- our identity Spearman reproduces the published
+    ESM2_650M column to 4 dp -- and PSSM dRho is exactly 0.0 at every
+    permuted cell, confirming registered prediction 1 as a measured assert.
+    COMPLETE: 15/15 assays, 15/15 gates PASS. 11 signal-bearing (rho>=0.20).
+    random m=20 dRho = -0.52 (signal), -0.43 (all). In-class = -0.19/-0.16.
+    Cross-class = -0.54/-0.44. PSSM invariant to exact 0.
+  - "LaTeX paper complete: 8 pages, compiles clean, figure included, all numbers verified."
+
+claims_forbidden:
+  - >
+    NOT "inverse scaling". Paired bootstrap ESM-2 650M - 15B = +0.0130, 95% CI
+    [-0.0015, +0.0273], not significant. Correct wording: "saturates at ~650M".
+  - >
+    NOT a blanket "mirage". Candido et al. report wet-lab-validated nanomolar binders.
+    Scope the claim to DISTRIBUTION-BOUNDED.
+  - >
+    NOT "pLMs learn nothing beyond additivity". Dieckhaus shows ESM-1v joint masking
+    beating its own additive mode (0.08 vs 0.05).
+  - >
+    NOT "nobody has scrambled pLM inputs". Rao et al. 2021 Fig 6 did, on two other axes.
+
+current_phase: paper-finalization
+venue_calibration:
+  source: literature/iclr2026-plm-exemplars-STRUCTURAL.md
+  sample: >
+    The four genuinely analysis-driven pLM papers at ICLR 2026 MAIN CONFERENCE, out of ~49
+    accepted bio/protein papers (the rest are method/generative). Venue confirmed two ways:
+    OpenReview venueid == ICLR.cc/2026/Conference, and \iclrfinalcopy uncommented in three
+    of the four arXiv sources.
+  decision_RESOLVED: >
+    DIAGNOSIS-ONLY. The open question "does this need a constructive half?" is closed NO.
+    Both diagnosis+fix papers in the sample land at ~30/65 and structurally demote the
+    diagnosis (one runs ZERO diagnostic experiments; the other labels its diagnosis
+    sec:preliminaries). Neither ever argues diagnosis would be insufficient -- the
+    transition is asserted by sequencing. The per-protein failure predictor is therefore
+    DROPPED, not deferred. Fork, do not blend.
+  reframe: >
+    Ship the alphabet-equivariance test as a NAMED, REUSABLE DIAGNOSTIC with a protocol,
+    and the ESM-2 collapse as its first application. The accepted existence proof (Shape of
+    Representations) is two experiments, two main-text results figures, zero tables, zero
+    error bars, and its one actionable recommendation failed -- what bought it was an
+    INSTRUMENT that made an ill-posed question well-posed. Ours qualifies: a necessary
+    condition with a proof, a guard, a positive control and a negative control.
+  craft_rules:
+    - "No numerals in the abstract. None of the four abstracts has a single number."
+    - "Name the phenomenon in abstract sentence 1-2 and run the coinage through section titles."
+    - "Appendix mass is the bar, not main-text mass. Shape: 8/12 figures in appendix.
+       Controlling Repetition: 26/28 tables. C6/C7/C8/C10 belong there."
+    - "Pre-empt the three predictable asks: mechanism (layer/head localisation),
+       generalisation (ESM-2 + MSA-T + a third), artifact (tokenizer/edit-distance/composition)."
+    - "Revealed rigor standard is LOW; ours already clears it. Spend remaining budget on
+       framing and instrument reusability, NOT on more rigor."
+
+review_mining_calibration:
+  source: >
+    literature/iclr2026-diagnostic-genre-reviews.md, literature/iclr2026-review-threads/,
+    data/openreview/. From the HuggingFace mirror JerMa88/ICLR_Peer_Reviews_2026 --
+    76199 verbatim review notes across 19814 ICLR 2026 submissions. OpenReview itself is
+    Cloudflare-gated from this host. KNOWN GAP: Official_Review notes only, no rebuttals,
+    so nothing here is a rebuttal-to-score-movement claim.
+  accept_rate_by_mean_rating: {4.0: 0.11, 4.5: 0.28, 5.0: 0.53, 5.5: 0.78, 6.0: 0.93}
+  accept_rate_by_genre:
+    all_decided: {n: 14164, rate: 0.378}
+    diagnostic_or_negative_framed: {n: 274, rate: 0.398}
+    diagnosis_with_fix: {n: 84, rate: 0.369}
+    diagnosis_no_fix: {n: 190, rate: 0.411}
+    diagnosis_plus_theorem: {rate: 0.474, note: "best bucket in the corpus"}
+  headline_restructure: >
+    PROPOSITION 2 LEADS. It is not support for the empirical sweep; it is what converts the
+    sweep from a benchmark into a research contribution. The objection that ends strong
+    diagnostic papers is "this is measurement, not a contribution" -- the EEG foundation
+    model paper ran 6 model families, 11 task-datasets, 18 classical non-neural decoders
+    and 50k-resample permutation tests with Bonferroni, and still took a 2 on exactly that,
+    with the AC writing that it "reads more like a benchmarking/engineering study than an
+    ICLR-level research contribution". The papers in that set that never faced the
+    objection are the two with a theorem.
+  three_nonoptional_additions:
+    - >
+      ARTIFACT CONTROL, and it must LEAD: rule out "the renamed alphabet is simply harder".
+      This is verbatim what killed VAR-MATH (near-identical invariance intervention on
+      AIME, mean 2.67): "the mutated questions are simply harder, causing the score drop".
+      Our instrument is In-class-vs-random at matched realized m (C6, C7).
+    - >
+      NON-REFIT COMPARATOR: the result must not read as "the baseline got retrained and the
+      neural model did not". Two answers already in hand -- MSA-Transformer reads an
+      alignment at inference and is retrained on nothing (C7), and Proposition 2 shows the
+      Potts refit yields a BIT-IDENTICAL score matrix, so refitting does no work.
+    - >
+      NAMED CONSEQUENCE, stated in the abstract. "pLMs memorise more than they generalise"
+      is already priced in as unsurprising in this field. Defensible consequences: (a) the
+      test is LABEL-FREE and STRUCTURE-FREE -- one sequence, L x 20 forward passes, no
+      ground truth -- so it is an audit any lab can run on any new pLM; (b) SCALE DOES NOT
+      CLOSE THE GAP (C8: 8M->3B buys biochemistry-sensitivity, not alphabet abstraction),
+      the "do not blindly upscale" consequence reviewers credited in the EEG thread.
+  scope_is_not_the_gate: >
+    Mirage-or-Method accepted at mean 6.0 on TWO models at ONE scale with 3 of 4 reviewers
+    flagging narrowness. A rejected paper ran 34 VLMs; another ran 10 models / 4 families /
+    5 datasets, was praised for "commendable experimental breadth", and scored 3.33.
+    Comparator CLASS gates; comparator COUNT does not.
+  synthetic_intervention_exposure: >
+    "Unlikely to occur naturally" appears in 22.6% of rejected reviews and 17.9% of accepted
+    ones -- ratio 1.26, near-useless as a discriminator. Illusion-of-Diminishing-Returns
+    took the harshest version ("an extremely synthetic and narrow task ... a more
+    fundamental flaw that challenges the paper's entire premise") and finished at mean 6.0,
+    because other reviewers credited what the design BOUGHT: two otherwise-confounded
+    variables decoupled. The artificiality must be framed as the instrument that isolates
+    the confound, in those words, in the abstract.
+
+next_action: >
+  ALL EXPERIMENTS COMPLETE as of 2026-08-12.
+  C8 3B: LANDED. random m=20 = 0.035 (1.1x), In-class = 0.526, gap = +0.491.
+  Readout 2: COMPLETE, 15/15 assays, 15/15 gates PASS, 11 signal-bearing.
+  Main sweep: COMPLETE, 9 proteins, 315 rows. Table 1 updated.
+  
+  LaTeX paper (final_paper/main.tex): 8 pages, compiles clean, all numbers verified
+  against committed CSVs. Figure 1 (3 panels: instrument, scale, crossing) included.
+  Readout 2 moved to appendix to fit page limit. Abstract updated for 375x range.
+  
+  REMAINING for submission:
+  1. Citation pass — fill .bib stub entries (user's job per project conventions).
+  2. Anonymised supplementary code package (src/alphabet_audit.py + dependencies).
+  3. Final proofread for LLM-heavy prose patterns (per COLM review feedback on lora-to-doc).
+  4. Update paper/DRAFT.md to match LaTeX or retire it.
+  
+  H3 stays unpromoted: two measured confounds, and H2 now has two readouts of its own.

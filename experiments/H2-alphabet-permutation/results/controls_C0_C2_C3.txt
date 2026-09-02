@@ -1,0 +1,37 @@
+========================================================================
+H2 control C0/C2/C3 -- MRF behaviour under alphabet permutation
+========================================================================
+MSA: N=2000  L=60  planted long-range contacts=15  min_sep=24
+
+[C0] recovery
+     precision@L/2 = 0.5000  (ceiling 0.5000, top 30 pairs, chance ~0.0085)
+     recall@L/2    = 1.0000
+     PASS
+
+[C2] exact invariance under consistent permutation
+     random        m=2    max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     random        m=6    max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     random        m=10   max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     random        m=20   max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     In-class  m=2    max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     In-class  m=6    max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     In-class  m=10   max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     In-class  m=20   max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     Cross-class       m=2    max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+     Cross-class       m=6    max|dS|=5.329e-15  recall=1.0000  comp_ok=True  PASS
+     Cross-class       m=10   max|dS|=5.329e-15  recall=1.0000  comp_ok=True  PASS
+     Cross-class       m=20   max|dS|=3.553e-15  recall=1.0000  comp_ok=True  PASS
+
+[C3] destruction under per-COLUMN row shuffle (true null)
+     recall@L/2 = 0.0000  (was 1.0000)
+     PASS -- dependency genuinely destroyed
+
+[C3b] per-SEQUENCE permutation (relabels both columns of a row alike)
+     recall@L/2 = 0.6000  (was 1.0000, true null 0.0000)
+     interpretation: MI between columns is invariant under a within-row
+     bijection, so this only BLURS coevolution. It is not a destruction
+     control -- it is a third experimental condition.
+
+========================================================================
+VERDICT: ALL CONTROLS PASS -- H2 premise verified, safe to proceed
+========================================================================
