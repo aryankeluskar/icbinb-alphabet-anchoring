@@ -1,6 +1,8 @@
-# Code and Dataset (released anonymously)
+# Code and Dataset
 
-Code and committed results for **"Protein Language Models Fail To Capture Contact Predictions Under Invariant Relabeling"** (submitted to *I Can't Believe It's Not Better: Failure Modes of AI in Biology*, NeurIPS 2026).
+Public release of the code, data and results used in our NeurIPS 2026 Workshop Paper: **"Protein Language Models Fail To Capture Contact Predictions Under Invariant Relabeling"**
+
+The paper can be accessed at [https://openreview.net/forum?id=xZUIK6aXNl](https://openreview.net/forum?id=xZUIK6aXNl)
 
 ## Environment
 
