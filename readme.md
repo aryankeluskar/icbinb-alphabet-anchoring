@@ -2,7 +2,7 @@
 
 Public release of the code, data and results used in our NeurIPS 2026 Workshop Paper: **"Protein Language Models Fail To Capture Contact Predictions Under Invariant Relabeling"**
 
-The paper can be accessed at [https://openreview.net/forum?id=xZUIK6aXNl](https://openreview.net/forum?id=xZUIK6aXNl)
+The paper can be accessed at [https://arxiv.org/abs/2611.16881](https://arxiv.org/abs/2611.16881) and [https://openreview.net/forum?id=xZUIK6aXNl](https://openreview.net/forum?id=xZUIK6aXNl)
 
 ## Environment
 
@@ -48,3 +48,16 @@ python experiments/H2-alphabet-permutation/code/analyze_h2.py
 ## Data licenses
 
 Third-party assets keep their upstream licenses. AMPLIFY checkpoints are MIT, Pfam alignments are CC0, SCOPe / ASTRAL is free for academic use and ProteinGym is MIT. The categorical Jacobian follows Zhang, Wayment-Steele, Brixi & Ovchinnikov, *PNAS* 2024; the inverse-covariance Potts follows Dauparas et al. AMPLIFY yearly weights are from Spinner et al. (arXiv:2507.22210), published as git branches of `chandar-lab/AMPLIFY_120M`.
+
+## Citation
+
+```
+@inproceedings{
+  batra2026protein,
+  title={Protein Language Models Fail To Capture Contact Predictions Under Invariant Relabeling},
+  author={Paarth Batra and Aryan Keluskar},
+  booktitle={I Can{\textquoteright}t Believe It{\textquoteright}s Not Better (ICBINB): Failure Modes of AI in Biology},
+  year={2026},
+  url={https://openreview.net/forum?id=dmp6tFw406}
+}
+```
